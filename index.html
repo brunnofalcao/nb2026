@@ -47,9 +47,10 @@ button{cursor:pointer;border:none;font-family:var(--fb);-webkit-tap-highlight-co
 .nav-d{display:none;gap:24px;align-items:center}
 .nav-d a{font-size:var(--bs);font-weight:500;color:var(--t2);transition:color .15s;position:relative}
 .nav-d a:hover,.nav-d a.on{color:var(--accent)}
+.nav-d a.hdr-btn,.nav-d a.hdr-btn:hover,.nav-d a.hdr-btn:visited{color:#fff !important}
 .nav-d a.on::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:16px;height:2px;background:var(--accent);border-radius:1px}
-.hdr-btn{font-size:var(--bs);font-weight:600;background:var(--cta);color:#fff;padding:8px 20px;border-radius:100px;transition:all .15s}
-.hdr-btn:hover{background:var(--cta-h);box-shadow:0 4px 24px rgba(77,174,124,.3)}
+.hdr-btn{font-size:var(--bs);font-weight:600;background:var(--cta);color:#fff !important;padding:8px 20px;border-radius:100px;transition:all .15s}
+.hdr-btn:hover{background:var(--cta-h);box-shadow:0 4px 24px rgba(77,174,124,.3);color:#fff !important}
 .menu-btn{background:none;color:var(--t1);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:22px}
 @media(min-width:768px){.nav-d{display:flex}.menu-btn{display:none}}
 
@@ -218,7 +219,8 @@ button{cursor:pointer;border:none;font-family:var(--fb);-webkit-tap-highlight-co
 /* Smart header hide/show */
 .hdr.hidden{transform:translateY(-100%)}
 .hdr{transition:all .3s var(--ease),transform .35s var(--ease)}
-.pg-hdr{padding:96px 20px 32px;text-align:center}
+.pg-hdr{padding:80px 20px 32px;text-align:center}
+@media(min-width:768px){.pg-hdr{padding:120px 20px 32px}}
 .pg-hdr h1{font-family:var(--fd);font-size:var(--h1);font-weight:800;color:var(--t1);letter-spacing:-.02em}
 
 /* ═══ MODULES ═══ */
@@ -268,7 +270,8 @@ details[open] summary::after{content:'−'}
 .cit-act{margin-top:12px;font-size:var(--bs);font-weight:600}
 
 /* ═══ BH PAGE — FULL SALES ═══ */
-.bh-hero{padding:96px 20px 48px;text-align:center;background:radial-gradient(60% 40% at 50% 10%,rgba(123,94,167,.15) 0%,transparent 100%);position:relative;overflow:hidden}
+.bh-hero{padding:80px 20px 40px;text-align:center;background:radial-gradient(60% 40% at 50% 10%,rgba(123,94,167,.15) 0%,transparent 100%);position:relative;overflow:hidden}
+@media(min-width:768px){.bh-hero{padding:120px 20px 48px}}
 .bh-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.12;animation:float 5s ease-in-out infinite}
 .bh-orb-1{width:200px;height:200px;background:var(--purple);top:40px;right:-40px}
 .bh-orb-2{width:150px;height:150px;background:var(--accent);bottom:0;left:-30px;animation-delay:2s}
@@ -619,7 +622,7 @@ details[open] summary::after{content:'−'}
 </div>
 </div>
 
-<p style="font-size:var(--bs);color:var(--t3);margin-top:24px" class="reveal">Quer participar como marca? <a href="https://wa.me/5561981382900?text=Olá! Tenho interesse em participar como marca no Nutrição Brasil BH" style="color:var(--accent);font-weight:600">Fale conosco →</a></p>
+<p style="font-size:var(--bs);color:var(--t3);margin-top:24px" class="reveal">Quer participar como marca? <a href="https://wa.me/5561994502691?text=Olá! Tenho interesse em participar como marca no Nutrição Brasil BH" style="color:var(--accent);font-weight:600">Fale conosco →</a></p>
 </section>
 
 <!-- BH Final CTA -->
