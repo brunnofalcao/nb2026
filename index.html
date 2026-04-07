@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080014">
+<title>Nutrição Brasil 2026 | O Novo Corpo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080014;--bg2:#0F0822;--bg3:#160E2C;--bg4:#1C1236;--glass:rgba(22,14,44,.65);--purple:#7B5EA7;--accent:#56CCF2;--accent-m:rgba(86,204,242,.12);--accent-s:rgba(86,204,242,.25);--cta:#4DAE7C;--cta-h:#5DC08E;--cta-m:rgba(77,174,124,.12);--gold:#D4AA5C;--gold-m:rgba(212,170,92,.12);--gold-s:rgba(212,170,92,.25);--nude:#D4A98C;--t1:#F0ECF7;--t2:#A99BC4;--t3:#7A6B96;--bdr:rgba(255,255,255,.06);--bdr2:rgba(255,255,255,.12);--sep:rgba(255,255,255,.04);--fd:'Outfit',sans-serif;--fb:'Inter',sans-serif;--hero:clamp(2.25rem,7vw,3.5rem);--h1:clamp(1.75rem,5vw,2.5rem);--h2:clamp(1.375rem,4vw,1.875rem);--h3:clamp(1.125rem,3vw,1.375rem);--b:0.9375rem;--bs:.8125rem;--cap:.75rem;--ov:.6875rem;--ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.56,.64,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:var(--fb);font-size:var(--b);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;font-family:var(--fb);-webkit-tap-highlight-color:transparent}
+::selection{background:var(--purple);color:#fff}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+@keyframes shimmer{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(77,174,124,.2)}50%{box-shadow:0 0 40px rgba(77,174,124,.4)}}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+.reveal-scale{opacity:0;transform:scale(.96);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal-scale.vis{opacity:1;transform:scale(1)}
+.reveal-left{opacity:0;transform:translateX(-20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal-left.vis{opacity:1;transform:translateX(0)}
+
+/* ═══ HEADER ═══ */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s var(--ease)}
+.hdr.scrolled{background:rgba(8,0,20,.88);backdrop-filter:saturate(180%) blur(24px);-webkit-backdrop-filter:saturate(180%) blur(24px);box-shadow:0 1px 0 var(--bdr)}
+.hdr-in{max-width:960px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--fd);font-weight:800;font-size:1.125rem;color:var(--t1);letter-spacing:-.02em;cursor:pointer;display:flex;align-items:center;gap:8px}
+.logo b{color:var(--accent)}.logo-tag{font-size:var(--ov);font-weight:700;background:var(--accent);color:var(--bg);padding:1px 8px;border-radius:8px}
+.nav-d{display:none;gap:24px;align-items:center}
+.nav-d a{font-size:var(--bs);font-weight:500;color:var(--t2);transition:color .15s;position:relative}
+.nav-d a:hover,.nav-d a.on{color:var(--accent)}
+.nav-d a.on::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:16px;height:2px;background:var(--accent);border-radius:1px}
+.hdr-btn{font-size:var(--bs);font-weight:600;background:var(--cta);color:#fff;padding:8px 20px;border-radius:100px;transition:all .15s}
+.hdr-btn:hover{background:var(--cta-h);box-shadow:0 4px 24px rgba(77,174,124,.3)}
+.menu-btn{background:none;color:var(--t1);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:22px}
+@media(min-width:768px){.nav-d{display:flex}.menu-btn{display:none}}
+
+/* Sheet */
+.sheet{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:0;transition:opacity .25s}
+.sheet.open{pointer-events:auto;opacity:1}
+.sheet-ov{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
+.sheet-p{position:absolute;bottom:0;left:0;right:0;background:var(--bg2);border-radius:20px 20px 0 0;padding:8px 20px 40px;padding-bottom:calc(40px + env(safe-area-inset-bottom));transform:translateY(100%);transition:transform .4s var(--ease)}
+.sheet.open .sheet-p{transform:translateY(0)}
+.sheet-h{width:36px;height:4px;border-radius:2px;background:rgba(255,255,255,.15);margin:8px auto 24px}
+.sheet-p a{display:block;padding:14px 0;border-bottom:1px solid var(--sep);font-size:1.0625rem;font-weight:500;color:var(--t1)}
+.sheet-p .btn-s{display:block;width:100%;margin-top:16px;background:var(--cta);color:#fff;padding:16px;border-radius:12px;font-size:1rem;font-weight:700;text-align:center}
+
+/* ═══ BUTTONS ═══ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;border-radius:12px;transition:all .15s var(--ease);position:relative;overflow:hidden}
+.btn:active{transform:scale(.97)}
+.btn-lg{padding:16px 32px;font-size:var(--b);border-radius:16px}
+.btn-md{padding:12px 24px;font-size:var(--bs)}
+.btn-fill{background:var(--cta);color:#fff}
+.btn-fill:hover{background:var(--cta-h);box-shadow:0 4px 24px rgba(77,174,124,.3);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--t1);border:1px solid var(--bdr2)}
+.btn-ghost:hover{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.18)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#C49740);color:var(--bg);font-weight:700}
+.btn-gold:hover{box-shadow:0 4px 20px rgba(212,170,92,.35);transform:translateY(-1px)}
+.btn-blue{background:var(--accent);color:var(--bg)}
+.btn-blue:hover{box-shadow:0 4px 24px rgba(86,204,242,.25);transform:translateY(-1px)}
+
+/* CTA Glow animation */
+.btn-glow{animation:glowPulse 2s infinite}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:96px 20px 64px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 10%,rgba(123,94,167,.25) 0%,transparent 100%),radial-gradient(40% 40% at 75% 85%,rgba(86,204,242,.08) 0%,transparent 100%),radial-gradient(30% 30% at 20% 70%,rgba(77,174,124,.05) 0%,transparent 100%)}
+.hero-grain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15;animation:float 6s ease-in-out infinite}
+.hero-orb-1{width:300px;height:300px;background:var(--purple);top:-100px;right:-50px;animation-delay:0s}
+.hero-orb-2{width:200px;height:200px;background:var(--accent);bottom:10%;left:-60px;animation-delay:2s}
+.hero-c{position:relative;z-index:1;max-width:640px}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--accent-m);border:1px solid var(--accent-s);border-radius:100px;padding:4px 16px;margin-bottom:32px;animation:fadeUp .8s var(--ease) both}
+.hero-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--cta);box-shadow:0 0 8px var(--cta);animation:pulse 2s infinite}
+.hero-pill span{font-size:var(--cap);font-weight:600;color:var(--accent)}
+.hero h1{font-family:var(--fd);font-size:var(--hero);font-weight:800;line-height:1.05;letter-spacing:-.03em;animation:fadeUp .8s .1s var(--ease) both}
+.hero h1 .bl{color:var(--accent)}.hero h1 .wr{color:var(--nude)}
+.hero-sub{font-size:var(--b);color:var(--t2);line-height:1.65;max-width:480px;margin:20px auto 32px;animation:fadeUp .8s .2s var(--ease) both}
+.hero-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .3s var(--ease) both}
+.cd{display:flex;gap:12px;justify-content:center;margin-top:40px;animation:fadeUp .8s .4s var(--ease) both}
+.cd-u{text-align:center}.cd-v{font-family:var(--fd);font-size:1.625rem;font-weight:700;color:var(--t1);background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--bdr);border-radius:12px;padding:8px 16px;min-width:56px;transition:all .3s}
+.cd-u:hover .cd-v{border-color:var(--accent-s);transform:translateY(-2px)}
+.cd-l{font-size:var(--ov);color:var(--t3);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+
+/* ═══ METRICS ═══ */
+.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:40px 20px;max-width:720px;margin:0 auto}
+@media(min-width:480px){.metrics{grid-template-columns:repeat(4,1fr)}}
+.metric{text-align:center}.metric-v{font-family:var(--fd);font-size:1.5rem;font-weight:800;color:var(--accent);letter-spacing:-.02em}
+.metric-l{font-size:var(--ov);color:var(--t3);margin-top:2px;text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+
+/* ═══ SECTIONS ═══ */
+.sec{padding:64px 20px}
+.sec-ey{font-size:var(--ov);font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;text-align:center;display:block;margin-bottom:8px}
+.sec-h{font-family:var(--fd);font-size:var(--h1);font-weight:800;color:var(--t1);text-align:center;letter-spacing:-.02em;line-height:1.15}
+.sec-d{font-size:var(--b);color:var(--t2);text-align:center;margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto}
+
+/* ═══ TRACKS ═══ */
+.trks{max-width:720px;margin:32px auto 0;display:grid;gap:8px}
+.trk{display:flex;gap:16px;align-items:flex-start;padding:20px 24px;background:var(--bg3);border:1px solid var(--bdr);border-radius:16px;transition:all .3s var(--ease)}
+.trk:hover{border-color:var(--purple);background:var(--bg4);transform:translateX(4px)}
+.trk-i{width:40px;height:40px;border-radius:10px;background:var(--accent-m);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.trk h3{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--t1);margin-bottom:4px}
+.trk p{font-size:var(--bs);color:var(--t2);line-height:1.55}
+
+/* ═══ AUDIENCE ═══ */
+.aud-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px;max-width:720px;margin:32px auto 0}
+.aud{background:var(--bg3);border:1px solid var(--bdr);border-radius:16px;padding:20px;transition:all .3s var(--ease)}
+.aud:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+.aud h3{font-family:var(--fd);font-size:var(--b);font-weight:700;color:var(--accent);margin-bottom:4px}
+.aud p{font-size:var(--bs);color:var(--t2)}
+
+/* ═══ PRICING ═══ */
+.pr-sec{padding:64px 20px;background:linear-gradient(180deg,transparent,rgba(123,94,167,.06))}
+.pr-g{display:grid;grid-template-columns:1fr;gap:16px;max-width:720px;margin:32px auto 0}
+@media(min-width:600px){.pr-g{grid-template-columns:repeat(2,1fr)}}
+.pr-c{background:var(--bg3);border-radius:20px;padding:32px 24px;position:relative;overflow:hidden;border:1px solid var(--bdr);transition:all .3s var(--ease)}
+.pr-c:hover{border-color:var(--bdr2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.pr-c.feat{border:2px solid var(--cta)}
+.pr-c.feat::before{content:'EVENTO PRINCIPAL';position:absolute;top:0;right:0;background:var(--cta);color:#fff;font-size:var(--ov);font-weight:700;padding:4px 16px;border-radius:0 0 0 8px}
+.pr-c h3{font-family:var(--fd);font-size:var(--h3);font-weight:800;color:var(--t1)}
+.pr-c .meta{font-size:var(--bs);color:var(--t2);margin-top:4px}
+.pr-amt{font-family:var(--fd);font-size:1.75rem;font-weight:800;color:var(--t1);margin-top:16px}
+.pr-amt small{font-size:var(--bs);font-weight:400;color:var(--t3)}
+.fl{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.fi{display:flex;align-items:center;gap:8px;font-size:var(--bs);color:var(--t1)}
+.fi .ck{color:var(--cta);font-size:14px}
+.cr{display:flex;justify-content:space-between;font-size:var(--bs);padding:6px 0}
+.cr .nm{color:var(--t1)}.cr .dt{color:var(--t3)}.cr .dt.hot{color:var(--gold);font-weight:600}
+.cb{display:block;width:100%;margin-top:24px;padding:16px;border-radius:12px;font-size:var(--b);font-weight:700;text-align:center;transition:all .15s}
+.cb.fill{background:var(--cta);color:#fff}.cb.fill:hover{background:var(--cta-h)}
+.cb.out{background:transparent;color:var(--t1);border:1px solid var(--bdr2)}.cb.out:hover{background:rgba(255,255,255,.04)}
+
+/* ═══ GOLDEN ═══ */
+.gld-w{max-width:640px;margin:0 auto;padding:64px 20px}
+.gld-c{background:linear-gradient(145deg,rgba(212,170,92,.08),rgba(123,94,167,.1));border:1px solid var(--gold-s);border-radius:20px;padding:40px 32px;text-align:center;position:relative;overflow:hidden}
+.gld-c::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,170,92,.04) 0%,transparent 50%);animation:shimmer 8s linear infinite}
+.gld-c>*{position:relative}
+.gld-ey{font-size:var(--ov);font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.15em}
+.gld-t{font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);margin:12px 0 24px}
+.gld-list{text-align:left;max-width:380px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.gld-item{display:flex;gap:12px;align-items:center;font-size:var(--bs);color:var(--t1)}
+.gld-item .star{color:var(--gold);font-size:14px}
+
+/* ═══ RUN ═══ */
+.run-w{max-width:640px;margin:0 auto;padding:48px 20px}
+.run-c{background:var(--bg3);border:1px solid var(--bdr);border-radius:20px;padding:32px 24px;text-align:center}
+
+/* ═══ SPONSORS / MARQUEE ═══ */
+.spn-w{padding:48px 20px;text-align:center;overflow:hidden}
+.spn-lbl{font-size:var(--ov);color:var(--t3);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+.marquee{overflow:hidden;margin-top:20px;mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}
+.marquee-inner{display:flex;gap:12px;animation:marquee 20s linear infinite;width:max-content}
+.marquee-inner:hover{animation-play-state:paused}
+.spn-chip{background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;padding:10px 20px;font-size:var(--bs);color:var(--t2);white-space:nowrap;transition:border-color .15s}
+.spn-chip:hover{border-color:var(--bdr2)}
+
+/* Logo images */
+.logo-img{height:28px;width:auto;display:block}
+.ftr-logo-img{height:24px;width:auto;display:block;margin:0 auto 12px}
+.sp-logo{height:18px;width:auto;display:inline-block;opacity:.5;margin-top:8px}
+.spn-logo{height:28px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.7;transition:opacity .3s}
+.spn-logo:hover{opacity:1}
+.spn-logo-card{background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;padding:16px 24px;display:flex;align-items:center;justify-content:center;min-height:56px;transition:all .3s}
+.spn-logo-card:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+.spn-logo-gold{border-color:var(--gold-s)}
+.spn-logo-gold:hover{border-color:var(--gold)}
+.marquee-chip{display:flex;align-items:center;justify-content:center;padding:8px 20px;background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;min-height:44px}
+.marquee-chip img{height:22px;width:auto;filter:brightness(0) invert(1);opacity:.5}
+
+/* ═══ WHATSAPP ═══ */
+.wa{position:fixed;bottom:88px;right:20px;z-index:90;width:48px;height:48px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:transform .15s var(--spring)}
+.wa:hover{transform:scale(1.08)}.wa:active{transform:scale(.95)}
+@media(min-width:768px){.wa{bottom:32px}}
+
+/* ═══ DOCK ═══ */
+.dock{position:fixed;bottom:0;left:0;right:0;z-index:95;padding:12px 20px;padding-bottom:calc(12px + env(safe-area-inset-bottom));background:rgba(8,0,20,.92);backdrop-filter:saturate(180%) blur(24px);-webkit-backdrop-filter:saturate(180%) blur(24px);border-top:1px solid var(--bdr);display:flex;align-items:center;gap:12px}
+.dock-info{flex:1}.dock-info small{font-size:var(--ov);color:var(--t3)}
+.dock-info strong{display:block;font-family:var(--fd);font-size:var(--b);font-weight:700;color:var(--t1)}
+.dock-btn{background:var(--cta);color:#fff;padding:12px 24px;border-radius:12px;font-size:var(--bs);font-weight:700;white-space:nowrap;transition:all .15s}
+@media(min-width:768px){.dock{display:none}}
+
+/* ═══ FOOTER ═══ */
+.ftr{border-top:1px solid var(--sep);padding:48px 20px 96px;text-align:center;max-width:600px;margin:0 auto}
+.ftr-logo{font-family:var(--fd);font-weight:800;font-size:1.125rem;color:var(--t1);margin-bottom:12px}.ftr-logo b{color:var(--accent)}
+.ftr p{font-size:var(--bs);color:var(--t3);line-height:1.6}
+.ftr-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:24px}
+.ftr-links a{font-size:var(--bs);color:var(--t2);transition:color .15s}.ftr-links a:hover{color:var(--t1)}
+.ftr-leg{margin-top:32px;font-size:var(--ov);color:var(--t3);opacity:.5}
+
+/* ═══ PAGES — Smooth Transitions ═══ */
+.pg{display:none;opacity:0;transform:translateY(8px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.pg.on{display:block}
+.pg.vis{opacity:1;transform:translateY(0)}
+.pg.out{opacity:0;transform:translateY(-8px)}
+
+/* Progress bar (BH page) */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--cta),var(--accent));z-index:101;transition:width .1s linear;border-radius:0 2px 2px 0;display:none}
+.progress-bar.active{display:block}
+
+/* Smart header hide/show */
+.hdr.hidden{transform:translateY(-100%)}
+.hdr{transition:all .3s var(--ease),transform .35s var(--ease)}
+.pg-hdr{padding:96px 20px 32px;text-align:center}
+.pg-hdr h1{font-family:var(--fd);font-size:var(--h1);font-weight:800;color:var(--t1);letter-spacing:-.02em}
+
+/* ═══ MODULES ═══ */
+.mods{max-width:720px;margin:0 auto;padding:0 20px 40px;display:grid;gap:12px}
+.mod{background:var(--bg3);border-radius:20px;padding:24px;position:relative;overflow:hidden;border:1px solid var(--bdr);transition:all .3s var(--ease)}
+.mod:hover{border-color:var(--bdr2)}.mod.top{border:2px solid var(--cta)}
+.mod .rec{position:absolute;top:0;right:20px;background:var(--cta);color:#fff;font-size:var(--ov);font-weight:700;padding:4px 12px;border-radius:0 0 8px 8px}
+.mod-row{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
+.mod h3{font-family:var(--fd);font-size:var(--h3);font-weight:800;color:var(--t1)}
+.mod .sub{font-size:var(--bs);color:var(--t2);margin-top:4px}
+.mod .val{font-family:var(--fd);font-size:1.375rem;font-weight:800;color:var(--t1);text-align:right}
+.mod .inst{font-size:var(--cap);color:var(--t3)}
+.mod-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.mod-tag{font-size:var(--cap);color:var(--t1);background:rgba(255,255,255,.04);padding:4px 12px;border-radius:8px}
+.mod-btn{display:block;width:100%;margin-top:20px;padding:16px;border-radius:12px;font-size:var(--b);font-weight:700;text-align:center;transition:all .15s}
+.mod-btn.fill{background:var(--cta);color:#fff}.mod-btn.fill:hover{background:var(--cta-h)}
+.mod-btn.dim{background:rgba(255,255,255,.04);color:var(--t1);border:1px solid var(--bdr)}.mod-btn.dim:hover{border-color:var(--bdr2)}
+
+/* FAQ */
+.faq{max-width:640px;margin:0 auto;padding:48px 20px 96px}
+.faq h2{font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);text-align:center;margin-bottom:24px}
+details{background:var(--bg3);border-radius:12px;margin-bottom:8px;border:1px solid var(--bdr);transition:border-color .3s}
+details:hover{border-color:var(--bdr2)}details[open]{border-color:var(--purple)}
+summary{padding:16px 20px;cursor:pointer;font-size:var(--b);font-weight:600;color:var(--t1);list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-size:18px;color:var(--t3);transition:transform .2s}
+details[open] summary::after{content:'−'}
+.ans{padding:0 20px 16px;font-size:var(--bs);color:var(--t2);line-height:1.65}
+
+/* ═══ CIDADES ═══ */
+.cit-list{max-width:640px;margin:0 auto;padding:0 20px 96px}
+.cit-main{background:linear-gradient(135deg,rgba(123,94,167,.12),rgba(86,204,242,.06));border:2px solid var(--cta);border-radius:20px;padding:24px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;cursor:pointer;transition:all .3s}
+.cit-main:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.cit-tag{font-size:var(--ov);color:var(--cta);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.cit-main h3{font-family:var(--fd);font-size:var(--h3);font-weight:800;color:var(--t1);margin:4px 0}
+.cit-main p{font-size:var(--bs);color:var(--t2)}
+.cit-card{background:var(--bg3);border-radius:16px;border:1px solid var(--bdr);padding:20px;margin-bottom:8px;transition:all .3s;display:block}
+.cit-card:hover{border-color:var(--bdr2)}.cit-card.done{opacity:.55}
+.cit-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cit-card h3{font-family:var(--fd);font-size:var(--b);font-weight:700;color:var(--t1);margin-bottom:4px}
+.cit-card.done h3{color:var(--t2)}
+.cit-card p{font-size:var(--bs);color:var(--t2)}
+.pill{font-size:var(--ov);font-weight:700;padding:4px 12px;border-radius:8px;white-space:nowrap}
+.pill-done{background:rgba(255,255,255,.04);color:var(--t3)}
+.pill-live{background:var(--cta-m);color:var(--cta)}
+.pill-soon{background:var(--accent-m);color:var(--accent)}
+.cit-act{margin-top:12px;font-size:var(--bs);font-weight:600}
+
+/* ═══ BH PAGE — FULL SALES ═══ */
+.bh-hero{padding:96px 20px 48px;text-align:center;background:radial-gradient(60% 40% at 50% 10%,rgba(123,94,167,.15) 0%,transparent 100%);position:relative;overflow:hidden}
+.bh-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.12;animation:float 5s ease-in-out infinite}
+.bh-orb-1{width:200px;height:200px;background:var(--purple);top:40px;right:-40px}
+.bh-orb-2{width:150px;height:150px;background:var(--accent);bottom:0;left:-30px;animation-delay:2s}
+.bh-hero>*{position:relative;z-index:1}
+.bh-pill{display:inline-block;background:var(--gold-m);border:1px solid var(--gold-s);border-radius:100px;padding:4px 16px;font-size:var(--cap);color:var(--gold);font-weight:600;margin-bottom:16px;animation:fadeUp .6s var(--ease) both}
+.bh-hero h1{font-family:var(--fd);font-size:var(--h1);font-weight:800;color:var(--t1);letter-spacing:-.02em;animation:fadeUp .6s .1s var(--ease) both}
+.bh-hero .bl{color:var(--accent)}
+.bh-venue{font-size:var(--bs);color:var(--t2);margin-top:8px;animation:fadeUp .6s .2s var(--ease) both}
+.bh-sub{font-size:var(--cap);color:var(--t3);margin-top:8px}
+
+/* BH Value Props */
+.bh-value{max-width:640px;margin:0 auto;padding:48px 20px}
+.bh-value h2{font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);margin-bottom:12px}
+.bh-value p{font-size:var(--b);color:var(--t2);line-height:1.7;margin-bottom:24px}
+.bh-vp{display:grid;gap:8px}
+.bh-vp-item{display:flex;gap:12px;padding:16px 20px;background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;transition:all .3s}
+.bh-vp-item:hover{border-color:var(--accent-s);transform:translateX(4px)}
+.bh-vp-icon{width:36px;height:36px;border-radius:8px;background:var(--accent-m);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.bh-vp-item h4{font-family:var(--fd);font-size:var(--bs);font-weight:700;color:var(--t1);margin-bottom:2px}
+.bh-vp-item p{font-size:var(--cap);color:var(--t2);line-height:1.5;margin:0}
+
+/* BH Speakers */
+.bh-speakers{max-width:640px;margin:0 auto;padding:0 20px 48px}
+.bh-speakers h2{font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);margin-bottom:20px}
+.spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.spk{background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;padding:16px;text-align:center;transition:all .3s}
+.spk:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+.spk-av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--accent));margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;font-weight:700;color:#fff}
+.spk-nm{font-family:var(--fd);font-size:var(--bs);font-weight:700;color:var(--t1)}
+.spk-role{font-size:var(--ov);color:var(--t3);margin-top:2px}
+
+/* BH Schedule — Smooth Accordion Blocks */
+.sched{max-width:640px;margin:0 auto;padding:0 20px 48px}
+.sched h2{font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);margin-bottom:20px}
+.sblk{background:var(--bg3);border:1px solid var(--bdr);border-radius:14px;margin-bottom:8px;overflow:hidden;transition:border-color .3s}
+.sblk:hover{border-color:var(--bdr2)}
+.sblk.open{border-color:var(--purple)}
+.sblk.open .sblk-hdr{border-bottom:1px solid var(--sep)}
+.sblk-hdr{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;-webkit-tap-highlight-color:transparent}
+.sblk-hdr .sblk-name{font-family:var(--fd);font-size:var(--b);font-weight:700;color:var(--t1)}
+.sblk-hdr .sblk-count{font-size:var(--cap);color:var(--t3);font-weight:500}
+.sblk-hdr .sblk-chev{color:var(--t3);font-size:14px;transition:transform .35s var(--ease)}
+.sblk.open .sblk-hdr .sblk-chev{transform:rotate(180deg)}
+.sblk-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease),padding .3s var(--ease)}
+.sblk.open .sblk-body{padding:0 20px 16px}
+.si{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--sep);transition:all .2s;align-items:flex-start}
+.si:last-child{border-bottom:none}
+.si:hover{padding-left:4px}
+.si-time{font-family:var(--fd);font-size:var(--bs);font-weight:700;color:var(--accent);min-width:48px;flex-shrink:0;padding-top:1px}
+.si-info{flex:1}
+.si-speaker{font-size:var(--bs);font-weight:600;color:var(--t1)}
+.si-topic{font-size:var(--cap);color:var(--t2);margin-top:3px;line-height:1.45}
+/* Inline Bag Experience inside accordion */
+.bag-inline{display:flex;gap:12px;align-items:center;padding:14px 16px;margin:8px 0;background:linear-gradient(135deg,rgba(212,170,92,.06),rgba(123,94,167,.04));border:1px solid var(--gold-s);border-radius:10px}
+.bag-inline-icon{font-size:16px;flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--gold-m);border-radius:8px;color:var(--gold)}
+.bag-inline-content{flex:1}
+.bag-inline-label{font-family:var(--fd);font-size:var(--bs);font-weight:700;color:var(--gold)}
+.bag-inline-desc{font-size:var(--cap);color:var(--t2);margin-top:1px;line-height:1.4}
+.bag-inline-time{font-family:var(--fd);font-size:var(--cap);font-weight:700;color:var(--t3);flex-shrink:0}
+
+/* Inline pause inside accordion */
+.pause-inline{display:flex;justify-content:space-between;align-items:center;padding:10px 0;margin:6px 0;border-top:1px dashed rgba(255,255,255,.06);border-bottom:1px dashed rgba(255,255,255,.06);font-size:var(--cap);color:var(--t3);font-weight:500}
+
+/* Sblk-pause standalone (unused now but kept) */
+.sblk-pause{background:var(--bg2);border:1px solid var(--bdr);border-radius:14px;margin-bottom:8px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.sblk-pause .sblk-name{font-family:var(--fd);font-size:var(--bs);font-weight:600;color:var(--t3)}
+.sblk-pause .sblk-time{font-size:var(--cap);color:var(--t3)}
+.bag-box{background:linear-gradient(135deg,rgba(212,170,92,.08),rgba(123,94,167,.06));border:1px solid var(--gold-s);border-radius:16px;margin-bottom:8px;padding:24px 20px;text-align:center;position:relative;overflow:hidden}
+.bag-box::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(212,170,92,.06),transparent 70%)}
+.bag-box>*{position:relative}
+.bag-box .bag-label{font-size:var(--ov);color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+.bag-box h3{font-family:var(--fd);font-size:var(--h3);font-weight:800;color:var(--t1);margin:8px 0}
+.bag-box p{font-size:var(--bs);color:var(--t2);line-height:1.55;max-width:420px;margin:0 auto}
+.bag-box .bag-time{font-size:var(--cap);color:var(--t3);margin-top:12px}
+.bag-photos{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.bag-photo{width:80px;height:80px;border-radius:12px;background:var(--bg3);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:var(--ov);color:var(--t3);transition:all .3s}
+.bag-photo:hover{border-color:var(--gold-s);transform:translateY(-2px)}
+
+/* Horizontal scroll speakers on mobile */
+.spk-scroll{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;scrollbar-width:none;-ms-overflow-style:none}
+.spk-scroll::-webkit-scrollbar{display:none}
+.spk-scroll .spk{scroll-snap-align:start;min-width:140px;flex-shrink:0}
+@media(min-width:600px){.spk-scroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));overflow:visible}.spk-scroll .spk{min-width:unset}}
+
+/* BH Pricing */
+.bh-price{max-width:640px;margin:0 auto;padding:0 20px 48px}
+.bh-price-card{background:var(--bg3);border:2px solid var(--cta);border-radius:20px;padding:32px 24px;text-align:center;position:relative}
+.bh-lote{display:inline-block;background:var(--cta-m);color:var(--cta);font-size:var(--ov);font-weight:700;padding:4px 12px;border-radius:8px;margin-bottom:12px}
+.bh-price-val{font-family:var(--fd);font-size:2rem;font-weight:800;color:var(--t1)}
+.bh-price-inst{font-size:var(--bs);color:var(--t2);margin-top:4px}
+.bh-includes{text-align:left;margin-top:20px;display:flex;flex-direction:column;gap:8px}
+.bh-inc{display:flex;gap:8px;font-size:var(--bs);color:var(--t1)}
+.bh-inc .ck{color:var(--cta)}
+
+/* BH Sponsors */
+.bh-sponsors{max-width:640px;margin:0 auto;padding:0 20px 48px;text-align:center}
+.bh-sponsors h2{font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);margin-bottom:8px}
+.bh-spn-sub{font-size:var(--bs);color:var(--t2);margin-bottom:20px}
+.bh-spn-grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.bh-spn-card{background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;padding:16px 24px;transition:all .3s}
+.bh-spn-card:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+.bh-spn-card .nm{font-family:var(--fd);font-size:var(--b);font-weight:700;color:var(--t1)}
+.bh-spn-card .role{font-size:var(--ov);color:var(--t3);margin-top:2px}
+
+/* ═══ PROGRAMAÇÃO ═══ */
+.prog-notice{font-size:var(--cap);color:var(--gold);background:var(--gold-m);display:inline-block;padding:4px 16px;border-radius:8px;margin-top:12px}
+.prog-day{margin-bottom:24px;max-width:640px;margin-left:auto;margin-right:auto;padding:0 20px}
+.prog-hdr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.prog-badge{background:var(--purple);color:#fff;font-size:var(--ov);font-weight:700;padding:4px 12px;border-radius:8px}
+.prog-date{font-family:var(--fd);font-size:var(--b);font-weight:600;color:var(--t1)}
+.prog-item{background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;margin-bottom:8px;display:flex;gap:16px;align-items:flex-start;transition:all .2s}
+.prog-item:hover{border-color:var(--bdr2)}
+.prog-tm{font-family:var(--fd);font-size:var(--bs);font-weight:700;color:var(--accent);min-width:40px;flex-shrink:0}
+.prog-nm{font-size:var(--bs);font-weight:600;color:var(--t1)}.prog-rm{font-size:var(--cap);color:var(--t2);margin-top:2px}
+
+/* ═══ HALL ═══ */
+.hall-yr{margin-bottom:48px;max-width:640px;margin-left:auto;margin-right:auto;padding:0 20px}
+.hall-yr h2{font-family:var(--fd);font-size:2rem;font-weight:800;color:var(--accent);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bdr)}
+.hon-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.hon{background:var(--bg3);border-radius:12px;padding:20px 16px;border:1px solid var(--bdr);text-align:center;transition:all .3s}
+.hon:hover{border-color:var(--bdr2);transform:translateY(-2px)}
+.hon-av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--accent));margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;font-weight:700;color:#fff}
+.hon-nm{font-family:var(--fd);font-size:var(--bs);font-weight:700;color:var(--t1)}
+.hon-ct{font-size:var(--cap);color:var(--t3);margin-top:2px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr"><div class="hdr-in"><div class="logo" onclick="go('home')"><img class="logo-img" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583229/nb_logotipo_hor_05_wqsydv.png" alt="Nutrição Brasil"></div><nav class="nav-d"><a href="#" onclick="go('home');return false" id="n-home">Início</a><a href="#" onclick="go('ingressos');return false" id="n-ingressos">Ingressos</a><a href="#" onclick="go('cidades');return false" id="n-cidades">Cidades</a><a href="#" onclick="go('programacao');return false" id="n-programacao">Programação</a><a href="#" onclick="go('hall');return false" id="n-hall">Homenageados</a><a class="hdr-btn" href="#" onclick="go('ingressos');return false">Inscreva-se</a></nav><button class="menu-btn" onclick="openS()" aria-label="Menu">☰</button></div></header>
+<div class="sheet" id="sheet" onclick="closeS()"><div class="sheet-ov"></div><div class="sheet-p" onclick="event.stopPropagation()"><div class="sheet-h"></div><a href="#" onclick="go('home');return false">Início</a><a href="#" onclick="go('ingressos');return false">Ingressos</a><a href="#" onclick="go('cidades');return false">Cidades</a><a href="#" onclick="go('programacao');return false">Programação</a><a href="#" onclick="go('hall');return false">Homenageados</a><a class="btn-s" href="#" onclick="go('ingressos');return false">Inscreva-se</a></div></div>
+
+<!-- ══════ HOME ══════ -->
+<div class="pg on" id="pg-home">
+<section class="hero"><div class="hero-glow"></div><div class="hero-grain"></div><div class="hero-orb hero-orb-1"></div><div class="hero-orb hero-orb-2"></div><div class="hero-c"><div class="hero-pill"><span class="dot"></span><span>27 a 29 de Agosto · Brasília - DF</span></div><h1>O Novo Corpo:<br><span class="bl">metabólico, mental</span><br><span class="wr">e muscular</span></h1><p class="hero-sub">O maior evento de nutrição do Brasil. Uma leitura completa do emagrecimento moderno — GLP-1, músculo, longevidade, comportamento e estética responsável.</p><div class="hero-acts"><a class="btn btn-fill btn-lg btn-glow" href="#" onclick="go('ingressos');return false">Garanta seu ingresso</a><a class="btn btn-ghost btn-lg" href="#" onclick="go('cidades');return false">Imersões e cidades</a></div><div class="cd" id="cd-bsb"></div></div></section>
+<div class="metrics reveal"><div class="metric"><div class="metric-v">10.000+</div><div class="metric-l">Visitantes</div></div><div class="metric"><div class="metric-v">120+</div><div class="metric-l">Palestras</div></div><div class="metric"><div class="metric-v">50+</div><div class="metric-l">Marcas</div></div><div class="metric"><div class="metric-v">1.500</div><div class="metric-l">Corredores</div></div></div>
+<section class="sec"><div class="reveal"><span class="sec-ey">Tema Central 2026</span><h2 class="sec-h">5 trilhas científicas</h2><p class="sec-d">Uma visão integrada do corpo real do paciente atual.</p></div><div class="trks"><div class="trk reveal reveal-d1"><div class="trk-i">🔬</div><div><h3>Metabolic Core</h3><p>Obesidade como doença crônica, mapa metabólico, fígado gorduroso e resistência insulínica.</p></div></div><div class="trk reveal reveal-d2"><div class="trk-i">💊</div><div><h3>Era GLP-1</h3><p>Sustentação de resultado, rebote, proteína, treino e o erro: perda de massa magra.</p></div></div><div class="trk reveal reveal-d3"><div class="trk-i">💪</div><div><h3>Músculo & Longevidade</h3><p>Sarcopenic obesity, estratégia de 90 dias, sono como anabolismo.</p></div></div><div class="trk reveal reveal-d4"><div class="trk-i">🧠</div><div><h3>Emagrecimento Social</h3><p>Cultura como gatilho, ansiedade, compulsão, estigma e adesão.</p></div></div><div class="trk reveal"><div class="trk-i">✨</div><div><h3>Estética Responsável</h3><p>O que dá pra prometer de verdade. Saúde da mulher, ciência vs hype.</p></div></div></div></section>
+<section class="sec"><div class="reveal"><h2 class="sec-h">Feito para quem move a Nutrição</h2></div><div class="aud-g"><div class="aud reveal reveal-d1"><h3>Nutricionistas</h3><p>Clínica, esportiva, comportamental e estratégica.</p></div><div class="aud reveal reveal-d2"><h3>Médicos</h3><p>Nutrologia, endocrinologia, medicina esportiva.</p></div><div class="aud reveal reveal-d3"><h3>Personal Trainers</h3><p>Força e músculo como proteção metabólica.</p></div><div class="aud reveal reveal-d4"><h3>Empreendedores</h3><p>Clínicas e marcas em saúde.</p></div><div class="aud reveal"><h3>Indústria</h3><p>Suplementação, alimentos, tech.</p></div><div class="aud reveal"><h3>Estudantes</h3><p>Formação conectada à prática real.</p></div></div></section>
+<section class="pr-sec"><div class="reveal" style="text-align:center"><h2 class="sec-h">Escolha sua experiência</h2><p class="sec-d">Brasília (27–29 Ago) ou Imersões regionais</p></div><div class="pr-g"><div class="pr-c feat reveal reveal-scale"><h3>Brasília – DF</h3><div class="meta">27 a 29 de agosto · Ulysses</div><div class="pr-amt">R$ 147 <small>a partir de</small></div><div class="fl"><div class="fi"><span class="ck">✓</span>Congresso · 4 plenárias</div><div class="fi"><span class="ck">✓</span>+100 palestras</div><div class="fi"><span class="ck">✓</span>Exposição · 50+ marcas</div><div class="fi"><span class="ck">✓</span>Homenagem Dia do Nutricionista</div><div class="fi"><span class="ck">✓</span>Corrida 5K/10K</div></div><a class="cb fill" href="#" onclick="go('ingressos');return false">Ver ingressos</a></div><div class="pr-c reveal reveal-scale" style="transition-delay:.15s"><h3>Imersões Regionais</h3><div class="meta">Experiências de 1 dia</div><div class="pr-amt">R$ 497 <small>a partir de</small></div><div style="margin-top:16px"><div class="cr"><span class="nm">Belo Horizonte</span><span class="dt hot">16 de maio</span></div><div class="cr"><span class="nm">Belém</span><span class="dt">Setembro</span></div><div class="cr"><span class="nm">Goiânia</span><span class="dt">7 de novembro</span></div><div class="cr"><span class="nm">Porto Alegre</span><span class="dt">14 de novembro</span></div></div><a class="cb out" href="#" onclick="go('cidades');return false">Ver cidades</a></div></div></section>
+<section class="gld-w"><div class="gld-c reveal reveal-scale"><span class="gld-ey">GOLDEN EXPERIENCE</span><h2 class="gld-t">Seja VIP</h2><div class="gld-list"><div class="gld-item"><span class="star">★</span>Imersão Golden 27/08 (Pré-evento)</div><div class="gld-item"><span class="star">★</span>Acesso a todas as plenárias</div><div class="gld-item"><span class="star">★</span>Plenária gravada vitalícia</div><div class="gld-item"><span class="star">★</span>Assentos VIP + Lounge</div><div class="gld-item"><span class="star">★</span>Coffee + Networking exclusivo</div><div class="gld-item"><span class="star">★</span>Corrida VIP inclusa</div></div><a class="btn btn-gold btn-lg" href="#" onclick="go('ingressos');return false" style="margin-top:32px">Saiba mais</a></div></section>
+<section class="run-w"><div class="run-c reveal"><span style="font-size:var(--ov);color:var(--accent);text-transform:uppercase;letter-spacing:.1em;font-weight:600">A CORRIDA MAIS NUTRITIVA DO BRASIL</span><h3 style="font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);margin:8px 0">Nutrição Brasil Run</h3><p style="font-size:var(--bs);color:var(--t2)">30 de agosto · Brasília · 5K e 10K</p><p style="font-size:var(--cap);color:var(--t2);margin-top:4px">Desconto para nutricionistas · Premiação exclusiva</p><a class="btn btn-blue btn-md" href="https://www.ticketsports.com.br/e/NUTRI%C3%87%C3%83O%20BRASIL%20RUN%202026-73880" target="_blank" style="margin-top:20px">Inscreva-se na corrida</a></div></section>
+<section class="spn-w"><span class="spn-lbl reveal">Quem lidera o mercado já passou por aqui</span><div class="marquee"><div class="marquee-inner"><div class="marquee-chip"><img src="https://framerusercontent.com/images/jZKlYk5m9Rjm2rt3Kfte0MdaE4.png?width=1149&height=232" alt="Prana"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/nzBYXQoRutMd5NkrerY8CmjNyk.png?width=2356&height=558" alt="Rousselot"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583354/nestle_health_Science_njod0z.png" alt="Nestlé"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/COVrdJPAIiZCTuSXoewCqiKxlxc.png?width=1080&height=446" alt="Bold"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/M3q4hgEcJzJFBurFzAUzVBd0Mc.png?width=1080&height=570" alt="Nude"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/gZfoeX9TPuL8fKnnY1F5TTVw.png?width=1877&height=835" alt="Belive"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167886/Logo_Caffeine_Army_ehm1x4.png" alt="Caffeine Army"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167780/cropped-logo-Puravida-1-400x123_vsfulc.png" alt="Puravida"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775168022/Logo_Pilbox_-_Simples_fundo_transparente_pt98ag.png" alt="Pilbox"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167978/Logo_Moving_png_eleagf.png" alt="Moving"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/jZKlYk5m9Rjm2rt3Kfte0MdaE4.png?width=1149&height=232" alt="Prana"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/nzBYXQoRutMd5NkrerY8CmjNyk.png?width=2356&height=558" alt="Rousselot"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583354/nestle_health_Science_njod0z.png" alt="Nestlé"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/COVrdJPAIiZCTuSXoewCqiKxlxc.png?width=1080&height=446" alt="Bold"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/M3q4hgEcJzJFBurFzAUzVBd0Mc.png?width=1080&height=570" alt="Nude"></div><div class="marquee-chip"><img src="https://framerusercontent.com/images/gZfoeX9TPuL8fKnnY1F5TTVw.png?width=1877&height=835" alt="Belive"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167886/Logo_Caffeine_Army_ehm1x4.png" alt="Caffeine Army"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167780/cropped-logo-Puravida-1-400x123_vsfulc.png" alt="Puravida"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775168022/Logo_Pilbox_-_Simples_fundo_transparente_pt98ag.png" alt="Pilbox"></div><div class="marquee-chip"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167978/Logo_Moving_png_eleagf.png" alt="Moving"></div></div></div></section>
+</div>
+
+<!-- ══════ INGRESSOS ══════ -->
+<div class="pg" id="pg-ingressos">
+<div class="pg-hdr"><span class="sec-ey">Nutrição Brasil · Brasília · 2026</span><h1>Escolha seu módulo</h1><p class="sec-d" style="margin-top:8px">Centro de Convenções Ulysses · 27 a 30 de agosto</p></div>
+<div class="mods">
+<div class="mod top reveal"><div class="rec">★ MAIS VENDIDO</div><div class="mod-row"><div><h3>Nutrição Brasil</h3><div class="sub">Plenária Principal · 27 a 29/08</div></div><div><div class="val">R$ 397</div><div class="inst">ou 12x de R$ 40,97</div></div></div><div class="mod-tags"><span class="mod-tag">✓ 3 dias</span><span class="mod-tag">✓ +100 palestras</span><span class="mod-tag">✓ Plenária</span><span class="mod-tag">✓ Certificado</span><span class="mod-tag">✓ Expo + Bag</span></div><a class="mod-btn fill" href="https://pay.hotmart.com/P104530692Q?checkoutMode=10" target="_blank">Comprar agora</a></div>
+<div class="mod reveal"><div class="mod-row"><div><h3>MedBrasil</h3><div class="sub">Aud. Águas Claras · 29/08</div></div><div><div class="val">R$ 297</div><div class="inst">12x R$ 30,65</div></div></div><div class="mod-tags"><span class="mod-tag">✓ Módulo médico</span><span class="mod-tag">✓ Endocrinologia</span><span class="mod-tag">✓ Certificado</span></div><a class="mod-btn dim" href="https://pay.hotmart.com/X104531896U?checkoutMode=10" target="_blank">Comprar agora</a></div>
+<div class="mod reveal"><div class="mod-row"><div><h3>Nutrição Esportiva</h3><div class="sub">Aud. Alvorada · 28/08</div></div><div><div class="val">R$ 197</div><div class="inst">12x R$ 20,33</div></div></div><div class="mod-tags"><span class="mod-tag">✓ 1 dia esportiva</span><span class="mod-tag">✓ Performance</span><span class="mod-tag">✓ Certificado</span></div><a class="mod-btn dim" href="https://pay.hotmart.com/A104530612B?checkoutMode=10" target="_blank">Comprar agora</a></div>
+<div class="mod reveal"><div class="mod-row"><div><h3>Congresso Corrida</h3><div class="sub">Aud. Alvorada · 29/08</div></div><div><div class="val">R$ 147</div><div class="inst">12x R$ 15,17</div></div></div><div class="mod-tags"><span class="mod-tag">✓ Ciência da corrida</span><span class="mod-tag">✓ Nutrição atletas</span><span class="mod-tag">✓ Certificado</span></div><a class="mod-btn dim" href="https://pay.hotmart.com/W104530405N?checkoutMode=10" target="_blank">Comprar agora</a></div>
+</div>
+<div style="max-width:720px;margin:12px auto 0;padding:0 20px"><div style="background:linear-gradient(135deg,rgba(212,170,92,.06),rgba(123,94,167,.08));border:1px solid var(--gold-s);border-radius:20px;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px" class="reveal"><div><span style="font-size:var(--ov);color:var(--gold);font-weight:700">★ GOLDEN EXPERIENCE</span><h3 style="font-family:var(--fd);font-size:var(--h3);font-weight:800;color:var(--t1);margin-top:4px">All Inclusive</h3><p style="font-size:var(--bs);color:var(--t2);margin-top:4px">Imersão + Plenárias + Lounge + Corrida VIP + Gravação</p></div><a class="btn btn-gold btn-md" href="https://pay.hotmart.com/X104531615W" target="_blank">Ver Golden</a></div></div>
+<div class="faq"><h2>Perguntas frequentes</h2><details><summary>Quem pode participar?</summary><div class="ans">Profissionais da saúde, estudantes e interessados em atualização científica.</div></details><details><summary>Desconto para estudante?</summary><div class="ans">Sim. Descontos disponíveis conforme o módulo.</div></details><details><summary>O evento é presencial?</summary><div class="ans">Sim. Presencial em Brasília. Golden inclui gravação vitalícia.</div></details><details><summary>Posso cancelar ou transferir?</summary><div class="ans">Sim, conforme regras da Hotmart informadas na compra.</div></details></div>
+</div>
+
+<!-- ══════ CIDADES ══════ -->
+<div class="pg" id="pg-cidades">
+<div class="pg-hdr"><h1>Imersões e Cidades</h1><p class="sec-d">Experiências de 1 dia · Norte a Sul do Brasil</p></div>
+<div class="cit-list">
+<div class="cit-main reveal" onclick="go('ingressos')"><div><span class="cit-tag">★ EVENTO PRINCIPAL</span><h3>Brasília – DF</h3><p>27 a 29 de agosto · Ulysses</p></div><span style="color:var(--cta);font-size:var(--b);font-weight:700">Ver ingressos →</span></div>
+<div class="cit-card done reveal"><div class="cit-top"><div><h3>Balneário Camboriú – SC</h3><p>28 de março · Riviera</p></div><span class="pill pill-done">Encerrado</span></div></div>
+<div class="cit-card reveal" style="cursor:pointer" onclick="go('bh')"><div class="cit-top"><div><h3>Belo Horizonte – MG</h3><p>16 de maio · Supernova · Hotmart</p></div><span class="pill pill-live">Ingressos abertos</span></div><div class="cit-act" style="color:var(--cta)">Ver programação e ingressos →</div></div>
+<a class="cit-card reveal" href="https://materiais.scienceplay.com/save-the-date-belem-2026" target="_blank"><div class="cit-top"><div><h3>Belém – PA</h3><p>Setembro · Local a confirmar</p></div><span class="pill pill-soon">Em breve</span></div><div class="cit-act" style="color:var(--accent)">Garantir prioridade →</div></a>
+<a class="cit-card reveal" href="https://materiais.scienceplay.com/save-the-date-goiania-2026" target="_blank"><div class="cit-top"><div><h3>Goiânia – GO</h3><p>7 de novembro · Castro's Hotel</p></div><span class="pill pill-soon">Em breve</span></div><div class="cit-act" style="color:var(--accent)">Garantir prioridade →</div></a>
+<a class="cit-card reveal" href="https://materiais.scienceplay.com/save-the-date-poa-2026" target="_blank"><div class="cit-top"><div><h3>Porto Alegre – RS</h3><p>14 de novembro · Deville Prime</p></div><span class="pill pill-soon">Em breve</span></div><div class="cit-act" style="color:var(--accent)">Garantir prioridade →</div></a>
+</div>
+</div>
+
+<!-- ══════ BH — FULL SALES PAGE ══════ -->
+<div class="pg" id="pg-bh">
+
+<!-- BH Hero -->
+<section class="bh-hero">
+<div class="bh-orb bh-orb-1"></div><div class="bh-orb bh-orb-2"></div>
+<span class="bh-pill">Próximo evento · 16 de maio</span>
+<h1>Nutrição Brasil<br><span class="bl">Belo Horizonte</span></h1>
+<p class="bh-venue">Auditório Supernova · Hotmart · 09h às 21h</p>
+<div class="cd" id="cd-bh" style="margin-top:24px;animation:fadeUp .6s .3s var(--ease) both"></div>
+<a class="btn btn-fill btn-lg btn-glow" href="https://pay.hotmart.com/D103748362B?off=wosh4gdp&checkoutMode=10&bid=1771426399917" target="_blank" style="margin-top:24px;animation:fadeUp .6s .4s var(--ease) both">Garantir 1º Lote · 12x de R$ 77,26</a>
+<p class="bh-sub" style="animation:fadeUp .6s .5s var(--ease) both">ou à vista por R$ 747 · Válido até 13/04 ou até esgotar</p>
+</section>
+
+<!-- BH Value Proposition -->
+<section class="bh-value">
+<div class="reveal">
+<h2>Por que esta edição é diferente</h2>
+<p>Em 2026, o emagrecimento mudou — e o consultório sentiu. A era dos GLP-1 acelerou resultados, mas trouxe riscos reais: rebote, perda de massa magra, adesão frágil e estética acima da fisiologia. O Nutrição Brasil BH é uma imersão de alta densidade científica sobre o emagrecimento moderno, com tema central: <strong style="color:var(--t1)">O Novo Corpo: metabólico, mental e muscular</strong>.</p>
+</div>
+<div class="bh-vp">
+<div class="bh-vp-item reveal reveal-d1"><div class="bh-vp-icon">🔬</div><div><h4>10 palestras técnicas + 1 talk especial</h4><p>Conteúdo de alto nível com aplicação clínica imediata</p></div></div>
+<div class="bh-vp-item reveal reveal-d2"><div class="bh-vp-icon">🩺</div><div><h4>5 especialidades no mesmo palco</h4><p>Nutrição, Endocrinologia, Nutrologia, Medicina Esportiva e Integrativa</p></div></div>
+<div class="bh-vp-item reveal reveal-d3"><div class="bh-vp-icon">🎒</div><div><h4>Bag Experience + Coffee Break</h4><p>Kit exclusivo com produtos das marcas parceiras + degustação</p></div></div>
+<div class="bh-vp-item reveal reveal-d4"><div class="bh-vp-icon">📜</div><div><h4>Certificado de participação</h4><p>12 horas de evento com certificado oficial</p></div></div>
+<div class="bh-vp-item reveal"><div class="bh-vp-icon">🤝</div><div><h4>Networking qualificado</h4><p>Profissionais de todo o Brasil em ambiente exclusivo Hotmart</p></div></div>
+<div class="bh-vp-item reveal"><div class="bh-vp-icon">💡</div><div><h4>Exposição de marcas parceiras</h4><p>Conheça produtos, lançamentos e inovações do setor</p></div></div>
+</div>
+</section>
+
+<!-- BH Speakers -->
+<section class="bh-speakers">
+<h2 class="reveal">Palestrantes confirmados</h2>
+<div class="spk-scroll">
+<div class="spk reveal reveal-d1"><div class="spk-av">S</div><div class="spk-nm">Dra. Samira Lima</div><div class="spk-role">Nutricionista</div></div>
+<div class="spk reveal reveal-d2"><div class="spk-av">H</div><div class="spk-nm">Dr. Henrique Freire</div><div class="spk-role">Nutricionista</div></div>
+<div class="spk reveal reveal-d3"><div class="spk-av">L</div><div class="spk-nm">Dra. Lorena Tomazett</div><div class="spk-role">Psicóloga</div></div>
+<div class="spk reveal reveal-d4"><div class="spk-av">F</div><div class="spk-nm">Dra. Fernanda Landeiro</div><div class="spk-role">Psicóloga</div></div>
+<div class="spk reveal"><div class="spk-av">B</div><div class="spk-nm">Dra. Bruna Pitaluga</div><div class="spk-role">Médica</div></div>
+<div class="spk reveal"><div class="spk-av">M</div><div class="spk-nm">Dra. Marcella Garcez</div><div class="spk-role">Médica</div></div>
+<div class="spk reveal"><div class="spk-av">R</div><div class="spk-nm">Dra. Roberta Carbonari</div><div class="spk-role">Nutricionista</div></div>
+<div class="spk reveal"><div class="spk-av">M</div><div class="spk-nm">Dra. Marianne Fazzi</div><div class="spk-role">Nutricionista</div></div>
+<div class="spk reveal"><div class="spk-av">T</div><div class="spk-nm">Dra. Thaisa Leal</div><div class="spk-role">Nutricionista</div></div>
+<div class="spk reveal"><div class="spk-av">B</div><div class="spk-nm">Brunno Falcão</div><div class="spk-role">CEO Science Play</div></div>
+</div>
+</section>
+
+<!-- BH Schedule — 3 Clean Blocks -->
+<section class="sched">
+<h2 class="reveal">Programação completa</h2>
+<p style="font-size:var(--bs);color:var(--t2);margin-bottom:24px" class="reveal">16 de maio · 09h às 21h · Toque para expandir</p>
+
+<!-- MANHÃ -->
+<div class="sblk open reveal" data-accordion>
+<div class="sblk-hdr" onclick="toggleBlk(this)">
+<div><span class="sblk-name">Manhã</span></div>
+<div style="display:flex;align-items:center;gap:12px"><span class="sblk-count">5 palestras + Bag Experience</span><span class="sblk-chev">▼</span></div>
+</div>
+<div class="sblk-body">
+<div class="si"><span class="si-time">09h00</span><div class="si-info"><div class="si-speaker">Brunno Falcão</div><div class="si-topic">Abertura Oficial</div></div></div>
+<div class="si"><span class="si-time">09h10</span><div class="si-info"><div class="si-speaker">Dra. Samira Lima</div><div class="si-topic">Aspectos neurobiológicos e manejo do sono no emagrecimento</div></div></div>
+<div class="si"><span class="si-time">10h00</span><div class="si-info"><div class="si-speaker">Dr. Henrique Freire</div><div class="si-topic">Como reduzir os níveis de lipoproteína(a) através da alimentação e suplementação</div></div></div>
+
+<!-- Bag Experience inline -->
+<div class="bag-inline">
+<div class="bag-inline-icon">✦</div>
+<div class="bag-inline-content">
+<div class="bag-inline-label">Bag Experience</div>
+<div class="bag-inline-desc">Intervalo com exposição de marcas, degustação e retirada do kit exclusivo</div>
+</div>
+<div class="bag-inline-time">10h50</div>
+</div>
+
+<div class="si"><span class="si-time">11h20</span><div class="si-info"><div class="si-speaker">Dra. Lorena Tomazett</div><div class="si-topic">TCC — Terapia da Comparação Coletiva</div></div></div>
+<div class="si"><span class="si-time">12h10</span><div class="si-info"><div class="si-speaker">Dra. Fernanda Landeiro</div><div class="si-topic">O paciente não falha, o sistema falha: reprogramando comportamento</div></div></div>
+
+<!-- Almoço inline -->
+<div class="pause-inline">
+<span>🍽 Almoço</span>
+<span>13h00 – 14h50</span>
+</div>
+</div>
+</div>
+
+<!-- TARDE -->
+<div class="sblk reveal" data-accordion>
+<div class="sblk-hdr" onclick="toggleBlk(this)">
+<div><span class="sblk-name">Tarde</span></div>
+<div style="display:flex;align-items:center;gap:12px"><span class="sblk-count">4 palestras + Coffee Break</span><span class="sblk-chev">▼</span></div>
+</div>
+<div class="sblk-body">
+<div class="si"><span class="si-time">14h50</span><div class="si-info"><div class="si-speaker">Dra. Bruna Pitaluga</div><div class="si-topic">Pré-natal do Século XXI na era dos agonistas de GLP-1</div></div></div>
+<div class="si"><span class="si-time">15h40</span><div class="si-info"><div class="si-speaker">Dra. Marcella Garcez</div><div class="si-topic">Análogos de GLP-1 e Suplementação: o que esperar</div></div></div>
+
+<!-- Coffee inline -->
+<div class="pause-inline">
+<span>☕ Coffee Break</span>
+<span>16h30 – 17h00</span>
+</div>
+
+<div class="si"><span class="si-time">17h00</span><div class="si-info"><div class="si-speaker">Dra. Roberta Carbonari</div><div class="si-topic">Tema a confirmar</div></div></div>
+<div class="si"><span class="si-time">17h50</span><div class="si-info"><div class="si-speaker">Dra. Marianne Fazzi</div><div class="si-topic">Tema a confirmar</div></div></div>
+</div>
+</div>
+
+<!-- ENCERRAMENTO -->
+<div class="sblk reveal" data-accordion>
+<div class="sblk-hdr" onclick="toggleBlk(this)">
+<div><span class="sblk-name">Encerramento</span></div>
+<div style="display:flex;align-items:center;gap:12px"><span class="sblk-count">3 momentos</span><span class="sblk-chev">▼</span></div>
+</div>
+<div class="sblk-body">
+<div class="si"><span class="si-time">18h40</span><div class="si-info"><div class="si-speaker">Dra. Thaisa Leal</div><div class="si-topic">Tema a confirmar</div></div></div>
+<div class="si"><span class="si-time">19h30</span><div class="si-info"><div class="si-speaker">Convidado especial</div><div class="si-topic">Palestra especial</div></div></div>
+<div class="si"><span class="si-time">20h20</span><div class="si-info"><div class="si-speaker">Brunno Falcão + convidados</div><div class="si-topic">Talk Integrativo — Encerramento</div></div></div>
+</div>
+</div>
+
+</section>
+
+<!-- Bag Experience — Box Especial -->
+<section style="max-width:640px;margin:0 auto;padding:0 20px 48px">
+<div class="bag-box reveal">
+<span class="bag-label">✦ Experiência Exclusiva</span>
+<h3>Bag Experience</h3>
+<p>No intervalo da manhã, você vive a Bag Experience: exposição das marcas parceiras, degustação de produtos, networking e a retirada do seu kit exclusivo com itens selecionados.</p>
+<div class="bag-time">10h50 – 11h20 · Dentro da programação da manhã</div>
+<div class="bag-photos">
+<img class="bag-photo" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775584356/NB_Balneario_-_Bag_Experience_iodsht.jpg" alt="Bag Experience" style="width:80px;height:80px;object-fit:cover">
+<img class="bag-photo" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775584356/NB_Balneario_-_Bag_Experience_2_bnn1mh.jpg" alt="Bag Experience" style="width:80px;height:80px;object-fit:cover">
+<img class="bag-photo" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775584357/NB_Balneario_-_Bag_Experience_3_jnjydq.jpg" alt="Bag Experience" style="width:80px;height:80px;object-fit:cover">
+<img class="bag-photo" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775584357/NB_Balneario_-_Bag_Experience_4_afcfoc.jpg" alt="Bag Experience" style="width:80px;height:80px;object-fit:cover">
+</div>
+</div>
+</section>
+
+<!-- BH Pricing -->
+<section class="bh-price">
+<div class="bh-price-card reveal reveal-scale">
+<span class="bh-lote">1º LOTE</span>
+<div class="bh-price-val">até 12x de R$ 77,26</div>
+<div class="bh-price-inst">ou à vista por R$ 747</div>
+<div class="bh-includes">
+<div class="bh-inc"><span class="ck">✓</span> 1 dia de imersão completa (09h–21h)</div>
+<div class="bh-inc"><span class="ck">✓</span> 12 horas de evento com certificado</div>
+<div class="bh-inc"><span class="ck">✓</span> 10 palestras técnicas + 1 talk especial</div>
+<div class="bh-inc"><span class="ck">✓</span> Bag Experience exclusiva</div>
+<div class="bh-inc"><span class="ck">✓</span> Coffee Break</div>
+<div class="bh-inc"><span class="ck">✓</span> Exposição de marcas parceiras</div>
+<div class="bh-inc"><span class="ck">✓</span> Networking em ambiente Hotmart</div>
+</div>
+<a class="btn btn-fill btn-lg btn-glow" href="https://pay.hotmart.com/D103748362B?off=wosh4gdp&checkoutMode=10&bid=1771426399917" target="_blank" style="width:100%;margin-top:24px">Garantir 1º lote · 12x de R$ 77,26</a>
+<p style="font-size:var(--cap);color:var(--t3);margin-top:12px">Válido até 13/04/26 ou até acabarem as vagas do lote</p>
+</div>
+</section>
+
+<!-- BH Sponsors -->
+<section class="bh-sponsors">
+<h2 class="reveal">Marcas que acreditam na nova nutrição</h2>
+<p class="bh-spn-sub reveal">Empresas que apoiam uma visão mais científica, responsável e conectada à realidade do paciente.</p>
+
+<div style="margin-bottom:20px" class="reveal">
+<span style="font-size:var(--ov);color:var(--gold);text-transform:uppercase;letter-spacing:.1em;font-weight:700;display:block;margin-bottom:12px">Patrocinadores</span>
+<div class="bh-spn-grid">
+<div class="spn-logo-card spn-logo-gold"><img class="spn-logo" src="https://framerusercontent.com/images/jZKlYk5m9Rjm2rt3Kfte0MdaE4.png?width=1149&height=232" alt="Prana Nutrition" style="height:32px"></div>
+<div class="spn-logo-card spn-logo-gold"><img class="spn-logo" src="https://framerusercontent.com/images/nzBYXQoRutMd5NkrerY8CmjNyk.png?width=2356&height=558" alt="Rousselot" style="height:26px"></div>
+<div class="spn-logo-card spn-logo-gold"><img class="spn-logo" src="https://framerusercontent.com/images/A2pp60eZsZUN0HWPLflXus5fiSY.webp?width=445&height=144" alt="Hotmart" style="height:26px"></div>
+</div>
+</div>
+
+<div class="reveal">
+<span style="font-size:var(--ov);color:var(--t3);text-transform:uppercase;letter-spacing:.1em;font-weight:600;display:block;margin-bottom:12px">Parceiros</span>
+<div class="bh-spn-grid">
+<div class="spn-logo-card"><img class="spn-logo" src="https://framerusercontent.com/images/COVrdJPAIiZCTuSXoewCqiKxlxc.png?width=1080&height=446" alt="Bold Snacks" style="height:26px"></div>
+<div class="spn-logo-card"><img class="spn-logo" src="https://framerusercontent.com/images/M3q4hgEcJzJFBurFzAUzVBd0Mc.png?width=1080&height=570" alt="Nude" style="height:26px"></div>
+<div class="spn-logo-card"><img class="spn-logo" src="https://framerusercontent.com/images/gZfoeX9TPuL8fKnnY1F5TTVw.png?width=1877&height=835" alt="Belive" style="height:26px"></div>
+<div class="spn-logo-card"><img class="spn-logo" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583354/nestle_health_Science_njod0z.png" alt="Nestlé Health Science" style="height:28px"></div>
+</div>
+</div>
+
+<p style="font-size:var(--bs);color:var(--t3);margin-top:24px" class="reveal">Quer participar como marca? <a href="https://wa.me/5561981382900?text=Olá! Tenho interesse em participar como marca no Nutrição Brasil BH" style="color:var(--accent);font-weight:600">Fale conosco →</a></p>
+</section>
+
+<!-- BH Final CTA -->
+<section style="max-width:640px;margin:0 auto;padding:0 20px 96px;text-align:center">
+<div class="reveal" style="background:linear-gradient(135deg,rgba(77,174,124,.08),rgba(86,204,242,.06));border:1px solid var(--cta-m);border-radius:20px;padding:40px 24px">
+<h2 style="font-family:var(--fd);font-size:var(--h2);font-weight:800;color:var(--t1);margin-bottom:8px">Sua vaga está esperando</h2>
+<p style="font-size:var(--b);color:var(--t2);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto">O 1º lote tem vagas limitadas. Garanta agora o melhor preço pra imersão que vai mudar sua prática clínica.</p>
+<a class="btn btn-fill btn-lg btn-glow" href="https://pay.hotmart.com/D103748362B?off=wosh4gdp&checkoutMode=10&bid=1771426399917" target="_blank">Inscreva-se agora · 12x de R$ 77,26</a>
+</div>
+</section>
+</div>
+
+<!-- ══════ PROGRAMAÇÃO ══════ -->
+<div class="pg" id="pg-programacao">
+<div class="pg-hdr"><h1>Programação</h1><p class="sec-d">4 dias · 4 módulos · +100 palestras</p><span class="prog-notice">Grade detalhada em breve</span></div>
+<div class="prog-day reveal"><div class="prog-hdr"><span class="prog-badge">Dia 1</span><span class="prog-date">27/08 (qua)</span></div><div class="prog-item"><span class="prog-tm">19h</span><div><div class="prog-nm">Hall da Fama — Homenagem Dia do Nutricionista</div><div class="prog-rm">Plenária Principal</div></div></div></div>
+<div class="prog-day reveal"><div class="prog-hdr"><span class="prog-badge">Dia 2</span><span class="prog-date">28/08 (qui)</span></div><div class="prog-item"><span class="prog-tm">09h</span><div><div class="prog-nm">Nutrição Brasil — Congresso + Expo</div><div class="prog-rm">Plenária Principal</div></div></div><div class="prog-item"><span class="prog-tm">09h</span><div><div class="prog-nm">Nutrição Esportiva</div><div class="prog-rm">Aud. Alvorada</div></div></div></div>
+<div class="prog-day reveal"><div class="prog-hdr"><span class="prog-badge">Dia 3</span><span class="prog-date">29/08 (sex)</span></div><div class="prog-item"><span class="prog-tm">09h</span><div><div class="prog-nm">Nutrição Brasil — Congresso + Expo</div><div class="prog-rm">Plenária Principal</div></div></div><div class="prog-item"><span class="prog-tm">09h</span><div><div class="prog-nm">MedBrasil</div><div class="prog-rm">Aud. Águas Claras</div></div></div><div class="prog-item"><span class="prog-tm">09h</span><div><div class="prog-nm">Congresso Corrida</div><div class="prog-rm">Aud. Alvorada</div></div></div></div>
+<div class="prog-day reveal" style="margin-bottom:96px"><div class="prog-hdr"><span class="prog-badge">Dia 4</span><span class="prog-date">30/08 (sáb)</span></div><div class="prog-item"><span class="prog-tm">07h</span><div><div class="prog-nm">Nutrição Brasil Run — 5K e 10K</div><div class="prog-rm">Percurso externo · Brasília</div></div></div></div>
+</div>
+
+<!-- ══════ HALL ══════ -->
+<div class="pg" id="pg-hall">
+<div class="pg-hdr"><span class="sec-ey" style="color:var(--gold)">Homenagem ao Dia do Nutricionista</span><h1>Hall da Fama</h1><p class="sec-d">Profissionais que construíram a Nutrição moderna no Brasil.</p></div>
+<div class="hall-yr reveal"><h2>2026</h2><div class="hon-g"><div class="hon"><div class="hon-av">A</div><div class="hon-nm">Ana Paula Pujol</div><div class="hon-ct">Bal. Camboriú</div></div><div class="hon"><div class="hon-av">A</div><div class="hon-nm">Andréia Naves</div><div class="hon-ct">São Paulo</div></div><div class="hon"><div class="hon-av">D</div><div class="hon-nm">Denise Carreiro</div><div class="hon-ct">São Paulo</div></div><div class="hon"><div class="hon-av">R</div><div class="hon-nm">Rita Castro</div><div class="hon-ct">Natal</div></div><div class="hon"><div class="hon-av">S</div><div class="hon-nm">Samira Lima</div><div class="hon-ct">Caruaru</div></div></div></div>
+<div class="hall-yr reveal"><h2>2025</h2><div class="hon-g"><div class="hon"><div class="hon-av">A</div><div class="hon-nm">Alice Pinho</div><div class="hon-ct">Salvador</div></div><div class="hon"><div class="hon-av">D</div><div class="hon-nm">Daniel Cady</div><div class="hon-ct">Salvador</div></div><div class="hon"><div class="hon-av">D</div><div class="hon-nm">Daniel Coimbra</div><div class="hon-ct">Fortaleza</div></div><div class="hon"><div class="hon-av">M</div><div class="hon-nm">Mariane Fazzi</div><div class="hon-ct">Santos</div></div></div></div>
+<div class="hall-yr reveal"><h2>2024</h2><div class="hon-g"><div class="hon"><div class="hon-av">A</div><div class="hon-nm">Alessandra Feltre</div><div class="hon-ct">São Paulo</div></div><div class="hon"><div class="hon-av">A</div><div class="hon-nm">Alessandra Luglio</div><div class="hon-ct">São Paulo</div></div><div class="hon"><div class="hon-av">A</div><div class="hon-nm">Andréia Friques</div><div class="hon-ct">Vitória</div></div><div class="hon"><div class="hon-av">H</div><div class="hon-nm">Henrique Freire</div><div class="hon-ct">Brasília</div></div><div class="hon"><div class="hon-av">V</div><div class="hon-nm">Valéria Pascoal</div><div class="hon-ct">São Paulo</div></div></div></div>
+<div class="hall-yr reveal" style="margin-bottom:96px"><h2>2023</h2><div class="hon-g"><div class="hon"><div class="hon-av">G</div><div class="hon-nm">Gabriel de Carvalho</div><div class="hon-ct">Porto Alegre</div></div><div class="hon"><div class="hon-av">M</div><div class="hon-nm">Murilo Pereira</div><div class="hon-ct">Brasília</div></div><div class="hon"><div class="hon-av">P</div><div class="hon-nm">Patrícia Davidson</div><div class="hon-ct">Rio de Janeiro</div></div><div class="hon"><div class="hon-av">R</div><div class="hon-nm">Rodolfo Peres</div><div class="hon-ct">São Paulo</div></div><div class="hon"><div class="hon-av">R</div><div class="hon-nm">Roberta Carbonari</div><div class="hon-ct">São Paulo</div></div></div></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="ftr"><img class="ftr-logo-img" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583229/nb_logotipo_hor_05_wqsydv.png" alt="Nutrição Brasil"><p>O evento que lidera a discussão sobre metabolismo, mente, músculo e o futuro da saúde no Brasil.</p><div class="ftr-links"><a href="#" onclick="go('home');return false">Início</a><a href="#" onclick="go('ingressos');return false">Ingressos</a><a href="#" onclick="go('cidades');return false">Cidades</a><a href="#" onclick="go('programacao');return false">Programação</a><a href="#" onclick="go('hall');return false">Homenageados</a></div><div class="ftr-leg"><img class="sp-logo" src="https://email-editor-production.s3.amazonaws.com/images/222578/Science%20Play%20-%20Negativa.png" alt="Science Play"><br>Science Play Cursos LTDA · CNPJ 33.612.911/0001-29</div></footer>
+
+<!-- WHATSAPP + DOCK + PROGRESS -->
+<div class="progress-bar" id="progBar"></div>
+<a class="wa" href="https://wa.me/5561981382900?text=Olá! Quero saber mais sobre o Nutrição Brasil 2026" target="_blank" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<div class="dock"><div class="dock-info"><small>Brasília · 27–29 Ago</small><strong>A partir de R$ 147</strong></div><a class="dock-btn" href="#" onclick="go('ingressos');return false">Ver ingressos</a></div>
+
+<script>
+/* ═══ SMOOTH PAGE TRANSITIONS ═══ */
+let currentPage='home';
+function go(id){
+  if(id===currentPage){closeS();return}
+  const oldEl=document.getElementById('pg-'+currentPage);
+  const newEl=document.getElementById('pg-'+id);
+  if(!newEl)return;
+  closeS();
+  // Fade out
+  if(oldEl){oldEl.classList.remove('vis');oldEl.classList.add('out')}
+  setTimeout(()=>{
+    document.querySelectorAll('.pg').forEach(p=>{p.classList.remove('on','vis','out')});
+    newEl.classList.add('on');
+    window.scrollTo({top:0,behavior:'instant'});
+    // Fade in
+    requestAnimationFrame(()=>{requestAnimationFrame(()=>{newEl.classList.add('vis')})});
+    currentPage=id;
+    // Update nav
+    document.querySelectorAll('.nav-d a:not(.hdr-btn)').forEach(a=>a.classList.remove('on'));
+    const n=document.getElementById('n-'+id);if(n)n.classList.add('on');
+    // Re-init reveals
+    setTimeout(initReveal,150);
+    // Progress bar
+    document.getElementById('progBar').classList.toggle('active',id==='bh');
+    // Counter animation
+    if(id==='home')setTimeout(animateCounters,300);
+    // Init accordions
+    if(id==='bh')setTimeout(initAccordions,100);
+  },250);
+}
+
+/* ═══ SHEET ═══ */
+function openS(){document.getElementById('sheet').classList.add('open');document.body.style.overflow='hidden'}
+function closeS(){document.getElementById('sheet').classList.remove('open');document.body.style.overflow=''}
+
+/* ═══ SMART HEADER — hide down, show up ═══ */
+let lastY=0,headerHidden=false;
+window.addEventListener('scroll',()=>{
+  const hdr=document.getElementById('hdr');
+  const y=window.scrollY;
+  hdr.classList.toggle('scrolled',y>40);
+  // Hide/show on scroll direction
+  if(y>200){
+    if(y>lastY&&!headerHidden){hdr.classList.add('hidden');headerHidden=true}
+    else if(y<lastY&&headerHidden){hdr.classList.remove('hidden');headerHidden=false}
+  }else{hdr.classList.remove('hidden');headerHidden=false}
+  lastY=y;
+  // Progress bar for BH
+  if(currentPage==='bh'){
+    const pg=document.getElementById('pg-bh');
+    const pct=Math.min(100,Math.max(0,(y/(pg.scrollHeight-window.innerHeight))*100));
+    document.getElementById('progBar').style.width=pct+'%';
+  }
+  // Parallax orbs
+  const orbs=document.querySelectorAll('.hero-orb,.bh-orb');
+  orbs.forEach(o=>{o.style.transform='translateY('+y*0.15+'px)'});
+},{passive:true});
+
+/* ═══ SCROLL REVEAL ═══ */
+function initReveal(){
+  const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale,.reveal-left').forEach(el=>{if(!el.classList.contains('vis')){obs.observe(el)}});
+}
+
+/* ═══ COUNTER ANIMATION ═══ */
+function animateCounters(){
+  document.querySelectorAll('.metric-v').forEach(el=>{
+    const text=el.textContent;
+    const match=text.match(/([\d.,]+)/);
+    if(!match)return;
+    const raw=match[1].replace(/\./g,'').replace(',','');
+    const target=parseInt(raw)||0;
+    const suffix=text.replace(match[1],'');
+    const hasK=target>=1000;
+    const duration=1200;
+    const start=performance.now();
+    function step(now){
+      const elapsed=now-start;
+      const progress=Math.min(elapsed/duration,1);
+      const eased=1-Math.pow(1-progress,3);// ease-out cubic
+      const current=Math.round(target*eased);
+      let display=current.toLocaleString('pt-BR');
+      el.textContent=display+suffix;
+      if(progress<1)requestAnimationFrame(step);
+    }
+    el.textContent='0'+suffix;
+    requestAnimationFrame(step);
+  });
+}
+
+/* ═══ SMOOTH ACCORDION ═══ */
+function initAccordions(){
+  document.querySelectorAll('.sblk[data-accordion]').forEach(blk=>{
+    const body=blk.querySelector('.sblk-body');
+    if(blk.classList.contains('open')){
+      body.style.maxHeight=body.scrollHeight+'px';
+    }
+  });
+}
+function toggleBlk(hdr){
+  const blk=hdr.closest('.sblk');
+  const body=blk.querySelector('.sblk-body');
+  if(blk.classList.contains('open')){
+    body.style.maxHeight=body.scrollHeight+'px';
+    requestAnimationFrame(()=>{body.style.maxHeight='0px'});
+    blk.classList.remove('open');
+  }else{
+    blk.classList.add('open');
+    body.style.maxHeight=body.scrollHeight+'px';
+    body.addEventListener('transitionend',function handler(){
+      if(blk.classList.contains('open'))body.style.maxHeight='none';
+      body.removeEventListener('transitionend',handler);
+    });
+  }
+}
+
+/* ═══ COUNTDOWN ═══ */
+function cd(t,id){
+  const el=document.getElementById(id);if(!el)return;
+  function u(){
+    const d=new Date(t)-new Date();
+    if(d<=0){el.innerHTML='<span style="color:var(--cta);font-weight:700">Evento iniciado!</span>';return}
+    const dy=Math.floor(d/864e5),hr=Math.floor(d%864e5/36e5),mn=Math.floor(d%36e5/6e4),sc=Math.floor(d%6e4/1e3);
+    el.innerHTML=[{v:dy,l:'dias'},{v:hr,l:'horas'},{v:mn,l:'min'},{v:sc,l:'seg'}].map(c=>
+      '<div class="cd-u"><div class="cd-v">'+String(c.v).padStart(2,'0')+'</div><div class="cd-l">'+c.l+'</div></div>'
+    ).join('');
+  }
+  u();setInterval(u,1000);
+}
+cd('2026-08-27T09:00:00','cd-bsb');
+cd('2026-05-16T09:00:00','cd-bh');
+
+/* ═══ INIT ═══ */
+document.getElementById('n-home').classList.add('on');
+initReveal();
+// Show home page with transition
+requestAnimationFrame(()=>{document.getElementById('pg-home').classList.add('vis')});
+// Animate counters when metrics are visible
+const metricsObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){animateCounters();metricsObs.unobserve(e.target)}})},{threshold:.5});
+const metricsEl=document.querySelector('.metrics');
+if(metricsEl)metricsObs.observe(metricsEl);
+</script>
+</body>
+</html>
