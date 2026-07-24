@@ -25,6 +25,16 @@
       "source": "/programacao/corrida-de-rua",
       "destination": "/programacao/nb-universitario",
       "permanent": true
+    },
+    {
+      "source": "/precos-bsb",
+      "destination": "/ingressos",
+      "permanent": true
+    },
+    {
+      "source": "/nutricao-brasil-run",
+      "destination": "/corrida",
+      "permanent": true
     }
   ]
 }
