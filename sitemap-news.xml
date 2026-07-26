@@ -121,4 +121,13 @@
       <news:title>Dia do Nutricionista: por que o Nutrição Brasil abre o congresso com uma homenagem</news:title>
     </news:news>
   </url>
+  <url>
+    <loc>https://www.nutricaobrasil.com.br/noticias/brasilia/nb-run-1-em-cada-4-corredores-nutricionista</loc>
+    <lastmod>2026-07-26T10:00:00-03:00</lastmod>
+    <news:news>
+      <news:publication><news:name>Nutrição Brasil</news:name><news:language>pt</news:language></news:publication>
+      <news:publication_date>2026-07-26T10:00:00-03:00</news:publication_date>
+      <news:title>1 em cada 4 corredores da NB Run é nutricionista: o dado que nenhuma corrida do Brasil entrega</news:title>
+    </news:news>
+  </url>
 </urlset>

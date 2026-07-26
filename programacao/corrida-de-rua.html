@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página não encontrada — Nutrição Brasil 2026</title>
-<meta name="description" content="Página não encontrada. Volte para a home do Nutrição Brasil 2026.">
-<link rel="canonical" href="https://www.nutricaobrasil.com.br/404">
+<title>Corrida de Rua 2026 | Módulo do Nutrição Brasil</title>
+<meta name="description" content="Nutrição aplicada à corrida e ao esporte de resistência, conectada à NB Run. O módulo Corrida de Rua do Nutrição Brasil. 29 de agosto, Brasília.">
+<link rel="canonical" href="https://www.nutricaobrasil.com.br/programacao/corrida-de-rua">
 <meta name="geo.region" content="BR-DF"><meta name="geo.placename" content="Brasília">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Página não encontrada — Nutrição Brasil 2026">
-<meta property="og:description" content="Página não encontrada. Volte para a home do Nutrição Brasil 2026.">
-<meta property="og:url" content="https://www.nutricaobrasil.com.br/404">
+<meta property="og:title" content="Corrida de Rua · Nutrição Brasil 2026">
+<meta property="og:description" content="A ciência da nutrição que corre junto. Endurance, resistência e a NB Run. Brasília, 29 de agosto.">
+<meta property="og:url" content="https://www.nutricaobrasil.com.br/programacao/corrida-de-rua">
 <meta property="og:image" content="https://res.cloudinary.com/dlzrfhwin/image/upload/v1782001371/Logo_Site_-_Social_Share_zlc4mz.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -29,7 +29,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
 <style>
-:root{
+
+:root{--lote-h:40px;
   --purple-deep:#1a0f2e;--purple-deep2:#2a1547;--purple-brand:#6f4d89;--purple-mid:#8B5FB5;--purple-light:#B48AD8;
   --blue:#80c0ff;--blue-deep:#3a7bd5;--nude:#e0b3a1;--nude-soft:#d4b8a6;
   --white:#fff;--off-white:#F8F6FA;--gray-100:#F0EDF4;--gray-200:#E2DDE8;--gray-400:#9B93A8;--gray-600:#6B6178;--gray-800:#3D3548;
@@ -44,7 +45,7 @@ a{text-decoration:none}
 img{max-width:100%;display:block}
 section{padding:100px 0}
 /* TOPBAR */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,15,46,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(180,138,216,0.12);transition:transform .4s}
+.topbar{position:fixed;top:var(--lote-h,40px);left:0;right:0;z-index:100;background:rgba(26,15,46,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(180,138,216,0.12);transition:transform .4s}
 .topbar.hidden{transform:translateY(-100%)}
 .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px;max-width:1180px;margin:0 auto}
 .topbar-logos{display:flex;align-items:center;gap:14px}
@@ -138,14 +139,46 @@ section{padding:100px 0}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 
-.e404{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(165deg,var(--purple-deep) 0%,#2a1547 50%,#241a3d 100%);padding:120px 24px 60px}
-.e404 .inner{max-width:540px}
-.e404 .big{font-family:'Instrument Serif',serif;font-size:clamp(90px,18vw,160px);font-weight:400;color:var(--blue);line-height:1;opacity:.9}
-.e404 h1{font-family:'Instrument Serif',serif;font-size:clamp(28px,4vw,40px);font-weight:400;color:#fff;margin:8px 0 16px}
-.e404 p{font-size:17px;color:rgba(255,255,255,.66);line-height:1.6;margin-bottom:34px}
-.e404 .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.axes{background:linear-gradient(180deg,var(--purple-deep),#23163d)}
+.axes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:46px}
+.axis{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:26px 24px;transition:transform .3s,background .3s,border-color .3s}
+.axis:hover{transform:translateY(-4px);background:rgba(128,192,255,.07);border-color:rgba(128,192,255,.22)}
+.axis h3{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:#fff;margin-bottom:8px}
+.axis p{font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.58)}
+.speakers{background:var(--off-white)}
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;margin-top:50px}
+.sp-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:26px 22px;text-align:center;transition:transform .3s,box-shadow .3s}
+.sp-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,15,46,.08)}
+.sp-av{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;background:linear-gradient(135deg,var(--purple-brand),var(--purple-mid));display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:26px;color:#fff}
+.sp-name{font-size:15px;font-weight:700;color:var(--purple-deep);line-height:1.2;margin-bottom:5px}
+.sp-role{font-size:12px;color:var(--gray-600)}
+.sp-host{grid-column:1/-1;background:linear-gradient(160deg,var(--purple-deep),#2a1547);border-radius:var(--r-lg);padding:34px;display:flex;align-items:center;gap:24px;text-align:left;flex-wrap:wrap}
+.sp-host .sp-av{margin:0;width:80px;height:80px;font-size:32px;background:linear-gradient(135deg,var(--blue),var(--blue-deep))}
+.sp-host .hname{font-family:'Instrument Serif',serif;font-size:28px;color:#fff;font-weight:400}
+.sp-host .hrole{font-size:14px;color:rgba(255,255,255,.6);margin-top:4px}
+.whom{background:var(--white)}
+.whom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:46px}
+.whom-card{background:var(--off-white);border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:28px 26px}
+.whom-card .wic{width:44px;height:44px;border-radius:12px;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.whom-card h4{font-size:16px;font-weight:700;color:var(--purple-deep);margin-bottom:8px}
+.whom-card p{font-size:14px;line-height:1.6;color:var(--gray-600)}
+.cta-final{background:linear-gradient(165deg,var(--purple-deep),#2a1547);text-align:center}
+.cta-final .section-title{color:#fff}.cta-final .section-title em{color:var(--nude)}
 
+
+/* ===== BARRA VIRADA DE LOTE ===== */
+#lote-bar{position:fixed;top:0;left:0;right:0;z-index:110;background:linear-gradient(90deg,#6f4d89,#8B5FB5 55%,#80c0ff);color:#fff;text-align:center;padding:9px 44px 9px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;line-height:1.35;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+#lote-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:800;white-space:nowrap}
+#lote-bar .lb-count{display:inline-flex;gap:5px;align-items:center;font-variant-numeric:tabular-nums}
+#lote-bar .lb-count b{background:rgba(255,255,255,.18);border-radius:6px;padding:2px 7px;font-weight:800;min-width:30px;display:inline-block}
+#lote-bar .lb-close{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:17px;cursor:pointer;opacity:.8;line-height:1;padding:4px}
+#lote-bar .lb-close:hover{opacity:1}
+#lote-bar.lb-ended{background:#1a0f2e}
+@media(max-width:600px){:root{--lote-h:74px}#lote-bar{font-size:12px;padding:7px 38px 7px 12px;gap:5px 8px}#lote-bar .lb-count b{padding:2px 5px;min-width:22px}#lote-bar span:first-child{width:100%}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.nutricaobrasil.com.br/"},{"@type":"ListItem","position":2,"name":"Programação","item":"https://www.nutricaobrasil.com.br/programacao"},{"@type":"ListItem","position":3,"name":"Corrida de Rua","item":"https://www.nutricaobrasil.com.br/programacao/corrida-de-rua"}]}
+</script>
 <!-- Microsoft Clarity — heatmaps + session replay. Trocar xk8p8zm744 pelo ID gerado em clarity.microsoft.com -->
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -156,6 +189,35 @@ section{padding:100px 0}
 </script>
 </head>
 <body>
+<!-- BARRA VIRADA DE LOTE -->
+<div id="lote-bar" role="status">
+  <span>⏳ <strong>2º lote encerra em breve</strong> — depois de <b style="font-weight:800">13/08</b> o preço sobe.</span>
+  <span class="lb-count" id="lbCount" aria-label="tempo restante"></span>
+  <a href="/ingressos" onclick="try{track_checkout('lote-bar')}catch(e){}">Garantir 2º lote →</a>
+  <button class="lb-close" aria-label="Fechar" onclick="document.getElementById('lote-bar').style.display='none'">×</button>
+</div>
+<script>
+(function(){
+  // 20 de julho de 2026, 23:59:59 — horário de Brasília (UTC-3)
+  var deadline = new Date('2026-08-13T23:59:59-03:00').getTime();
+  var el = document.getElementById('lbCount');
+  var bar = document.getElementById('lote-bar');
+  if(!el) return;
+  function tick(){
+    var diff = deadline - Date.now();
+    if(diff <= 0){
+      bar.classList.add('lb-ended');
+      bar.querySelector('span').innerHTML = '🔥 <strong>2º lote encerrado.</strong> Garanta agora antes da próxima virada.';
+      el.innerHTML='';
+      clearInterval(iv); return;
+    }
+    var d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5), m=Math.floor(diff%36e5/6e4), s=Math.floor(diff%6e4/1e3);
+    el.innerHTML = '<b>'+d+'</b>d <b>'+('0'+h).slice(-2)+'</b>h <b>'+('0'+m).slice(-2)+'</b>m <b>'+('0'+s).slice(-2)+'</b>s';
+  }
+  tick(); var iv=setInterval(tick,1000);
+})();
+</script>
+
 <header class="topbar" id="hdr">
   <div class="topbar-inner">
     <div class="topbar-logos">
@@ -174,18 +236,71 @@ section{padding:100px 0}
   </div>
 </header>
 <main>
-<section class="e404">
-  <div class="inner">
-    <div class="big">404</div>
-    <h1>Essa página saiu pra correr</h1>
-    <p>O link que você tentou acessar não existe mais ou mudou de lugar. Mas o Nutrição Brasil continua firme — vamos te levar de volta.</p>
-    <div class="acts">
-      <a href="/" class="btn-primary">Voltar para a home →</a>
-      <a href="/ingressos" class="btn-secondary">Ver ingressos</a>
+<section class="phero">
+  <div class="container inner">
+    <span class="eyebrow"><span class="dot"></span>Movimento · 29 ago</span>
+    <h1>Nutrição que <em>corre</em> junto</h1>
+    <p>A ciência da nutrição aplicada à corrida e ao esporte de resistência, conectando consultório e a NB Run.</p>
+    <div class="pmeta"><span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>29 de agosto</span><span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ulysses Guimarães · Brasília</span></div>
+    <div class="pactions">
+      <a href="/ingressos" class="btn-primary" onclick="track_checkout('corrida-de-rua-hero')">Garantir minha vaga →</a>
+      <a href="/programacao" class="btn-secondary">Ver todos os módulos</a>
     </div>
   </div>
 </section>
+
+<section class="speakers">
+  <div class="container center">
+    <span class="section-label"><span class="line"></span>Quem sobe ao palco</span>
+    <h2 class="section-title">Palestrantes <em>confirmados</em></h2>
+  </div>
+  <div class="container">
+    <div class="sp-grid">
+      
+      <div class="sp-card"><div class="sp-av">KG</div><div class="sp-name">Dra. Karen Guimarães</div><div class="sp-role">Nutricionista</div></div>
+      <div class="sp-card"><div class="sp-av">MM</div><div class="sp-name">Dra. Maria Matos</div><div class="sp-role">Nutricionista</div></div>
+      <div class="sp-card"><div class="sp-av">LN</div><div class="sp-name">Dra. Letycia Nogueira</div><div class="sp-role">Nutricionista</div></div>
+    </div>
+  </div>
+</section>
+<section class="whom">
+  <div class="container center">
+    <span class="section-label"><span class="line"></span>Pra quem é</span>
+    <h2 class="section-title">Feito para quem <em>leva a sério</em></h2>
+  </div>
+  <div class="container">
+    <div class="whom-grid">
+      <div class="whom-card"><div class="wic">🏃</div><h4>Nutri de endurance</h4><p>Quem atende corredores e atletas de resistência.</p></div>
+      <div class="whom-card"><div class="wic">🥗</div><h4>Clínicos ativos</h4><p>Quem quer unir nutrição, corrida e estilo de vida.</p></div>
+      <div class="whom-card"><div class="wic">🏅</div><h4>Entusiastas do esporte</h4><p>Profissionais que vivem o que prescrevem.</p></div>
+    </div>
+  </div>
+</section>
+<section class="cta-final">
+  <div class="container center">
+    <span class="section-label"><span class="line"></span>1º Lote aberto</span>
+    <h2 class="section-title">Sua vaga está <em>esperando</em></h2>
+    <p class="section-intro" style="margin:0 auto 32px">Preço de 1º lote por tempo limitado. Quando vira o lote, o valor sobe.</p>
+    <a href="/ingressos" class="btn-primary" onclick="track_checkout('corrida-de-rua-final')">Garantir minha vaga →</a>
+  </div>
+</section>
 </main>
+<section class="lead dark">
+  <div class="container">
+    <div class="lead-box">
+      <span class="section-label"><span class="line"></span>Fique por dentro</span>
+      <h2 class="section-title">Receba as novidades em <em>primeira mão</em></h2>
+      <p class="section-intro" style="margin:0 auto">Viradas de lote, novos palestrantes confirmados e condições especiais. Direto no seu e-mail, sem spam.</p>
+      <div class="lead-form" id="leadForm">
+        <input type="text" id="lead-name" data-clarity-mask="true" placeholder="Seu nome" autocomplete="name">
+        <input type="email" id="lead-email" data-clarity-mask="true" placeholder="Seu melhor e-mail" autocomplete="email">
+        <button onclick="submitLead()">Quero receber →</button>
+      </div>
+      <div class="lead-ok" id="leadOk">Pronto! Você está na lista. ✓</div>
+      <p class="lead-note">Ao enviar, você concorda em receber comunicações do Nutrição Brasil.</p>
+    </div>
+  </div>
+</section>
 <footer class="footer">
   <div class="container">
     <div class="footer-logos">
@@ -212,6 +327,10 @@ section{padding:100px 0}
     </p>
   </div>
 </footer>
+<div class="sticky-cta">
+  <div class="sc-price">A partir de<em>R$ 97</em></div>
+  <a href="/ingressos" onclick="track_checkout('sticky')">Garantir vaga →</a>
+</div>
 <script>
 var lastY=0;
 window.addEventListener('scroll',function(){
@@ -245,5 +364,6 @@ function submitLead(){
   document.getElementById('leadOk').style.display='block';
 }
 </script>
+
 </body>
 </html>
