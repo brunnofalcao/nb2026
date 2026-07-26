@@ -8,8 +8,16 @@
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:title" content="Patrocine a NB Run 2026">
 <meta property="og:description" content="A corrida mais nutritiva do Brasil. 1.000 corredores, 30 de agosto, Brasília. Cotas Master, Patrocínio, Apoio e Sampling.">
-<meta property="og:image" content="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583229/nb_logotipo_hor_05_wqsydv.png">
+<meta property="og:image" content="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785062633/Nutric%CC%A7a%CC%83o_Brasil_Run_-_00724_1_jzaz0z.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.nutricaobrasil.com.br/nbrun-patrocinio">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Patrocine a NB Run 2026">
+<meta name="twitter:description" content="A corrida mais nutritiva do Brasil. 1.000 corredores, 30 de agosto, Brasília.">
+<meta name="twitter:image" content="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785062633/Nutric%CC%A7a%CC%83o_Brasil_Run_-_00724_1_jzaz0z.jpg">
+
 <link rel="icon" href="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583223/nb_Logotipo_05_c3tejv.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +77,6 @@ section{padding:96px 0;position:relative;scroll-margin-top:84px}
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:130px 0 90px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0d0618}
 .hero-bg .fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
-@media(max-width:900px),(pointer:coarse){.hero-bg .fallback{opacity:.72}.hero-video{display:none}}
 .hero-video{position:absolute;inset:0;overflow:hidden}
 .hero-video iframe{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100svh;min-width:177.78svh;transform:translate(-50%,-50%);border:0;pointer-events:none}
 .hero-bg .ph{position:absolute;inset:0;border-radius:0;border:none;opacity:.62}
@@ -530,7 +537,7 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:#0a0413}
       <p class="sec-desc">Grandes marcas de nutrição, alimentos e performance já ativaram no ecossistema do Nutrição Brasil. Na NB Run, a régua é a mesma.</p>
     </div>
     <div class="brand-grid stagger">
-      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583354/nestle_health_Science_njod0z.png" alt="Nestlé Health Science"></div>
+      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785078713/Nestle_N_H_Logo_SECONDARY_Dark_RBG_mydh5a.png" alt="Nestlé Health Science"></div>
       <div class="brand big"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167886/Logo_Caffeine_Army_ehm1x4.png" alt="Caffeine Army"></div>
       <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785065885/verde_campo_logo_ut1ene.jpg" alt="Verde Campo"></div>
       <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775167755/bold_-_logo_rmjulr.png" alt="Bold"></div>
@@ -736,12 +743,9 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:#0a0413}
   },{threshold:.18});
   document.querySelectorAll('.reveal,.stagger,.panel,.aud-grid').forEach(function(el){io.observe(el);});
 
-  // Vídeo de fundo do hero: trecho em loop, mudo (somente desktop)
-  // No mobile o iOS/Android bloqueia autoplay e o player fica parado com botão de play e título por cima,
-  // então lá mostramos apenas a foto de fundo.
+  // Vídeo de fundo do hero: trecho em loop, mudo
   var VIDEO_ID='okfQtwPNdFI', START=204, END=228; // 3:24 até 3:48
-  var isMobile=window.matchMedia('(max-width:900px),(pointer:coarse)').matches;
-  if(!reduce && !isMobile){
+  if(!reduce){
     var yt=document.createElement('script');
     yt.src='https://www.youtube.com/iframe_api';
     document.head.appendChild(yt);
