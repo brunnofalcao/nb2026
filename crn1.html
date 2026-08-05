@@ -141,11 +141,6 @@ details.st[open] .st-chev{transform:rotate(180deg)}
 .voz-q b{display:block;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#FFD9BE;margin-bottom:10px}
 .voz-q em{font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;display:block;line-height:1.35}
 
-/* princípios */
-.princ{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:760px;margin:32px auto 0}
-.princ span{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 18px;font-size:13px;font-weight:700;color:var(--ink-soft)}
-.princ span b{color:var(--orange-deep)}
-
 /* ===== FORM ===== */
 .inscricao{background:var(--ink);color:#fff}
 .inscricao .sec-label{color:#FFB27D}
@@ -171,10 +166,11 @@ footer .fine{font-size:12px;color:#8A6F58;line-height:1.8;margin-top:10px}
   .voz{grid-template-columns:1fr;padding:32px 24px}
   .hero{padding:52px 0 64px}
   .hero .sub{font-size:16px}
-  .topbar-in{padding:10px 16px}
-  .topbar-logos{gap:10px}
-  .topbar-logos img{height:22px}
-  .tb-cta{font-size:12.5px;padding:9px 16px}
+  .topbar-in{padding:10px 14px;gap:10px}
+  .topbar-logos{gap:0;min-width:0;flex:1 1 auto;overflow:hidden}
+  .topbar-logos img{height:26px}
+  .topbar-logos img:nth-child(3),.topbar-logos .sep{display:none}
+  .tb-cta{font-size:12.5px;padding:9px 15px;flex:0 0 auto}
   .btn-hero{width:100%;max-width:360px}
   body{padding-bottom:74px}
 }
@@ -366,16 +362,6 @@ footer .fine{font-size:12px;color:#8A6F58;line-height:1.8;margin-top:10px}
         <em style="margin-top:10px">"Qual o maior desafio da Nutrição hoje?"</em>
         <em style="margin-top:10px">"O que você espera do CRN-1?"</em>
       </div>
-    </div>
-
-    <!-- PRINCÍPIOS -->
-    <div class="princ">
-      <span><b>Menos</b> é mais</span>
-      <span>Espaço <b>compacto</b> e funcional</span>
-      <span>Experiências de <b>alta qualidade</b></span>
-      <span>Geração de <b>dados</b> e evidências</span>
-      <span><b>Aproximação</b> com a categoria</span>
-      <span><b>Legado</b> além do evento</span>
     </div>
   </div>
 </section>
