@@ -178,6 +178,27 @@ h2.sec-title em{font-style:normal;color:var(--azul)}
 /* Marcas */
 .brands{background:#120a24;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .brand-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
+
+.brand-grid.sponsor{grid-template-columns:repeat(3,1fr)}
+.brand-grid.sponsor .brand{min-height:132px}
+.brand-grid.sponsor .brand img{max-height:64px}
+.brand-grid.fuel{grid-template-columns:repeat(3,1fr);max-width:760px}
+.brand-grid.part{grid-template-columns:repeat(2,1fr);max-width:520px}
+@media(max-width:860px){.brand-grid.sponsor{grid-template-columns:repeat(2,1fr)}.brand-grid.fuel{grid-template-columns:repeat(2,1fr)}.brand-grid.fuel .brand:last-child{grid-column:1/-1}}
+@media(max-width:520px){.brand-grid.sponsor{grid-template-columns:repeat(2,1fr)}.brand-grid.part{grid-template-columns:repeat(2,1fr)}}
+
+
+/* virada de lote */
+.lotecta{background:#0d0718;padding:34px 0}
+.lote-box{background:linear-gradient(120deg,#4bb7ff22,#80c0ff11),#151028;border:1px solid rgba(128,192,255,.35);border-radius:22px;padding:34px 38px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.lote-tag{display:inline-block;background:#80c0ff;color:#0d0718;font-size:11.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:12px}
+.lote-box h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,3.2vw,34px);line-height:1.15;color:#fff;margin-bottom:8px}
+.lote-box h2 em{font-style:italic;color:#80c0ff}
+.lote-box p{color:#b9aed0;font-size:14.5px;line-height:1.6;max-width:520px}
+.lote-btn{flex:0 0 auto;background:#80c0ff;color:#0d0718;font-weight:800;font-size:15px;padding:16px 30px;border-radius:100px;text-decoration:none;transition:.25s;white-space:nowrap}
+.lote-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(128,192,255,.4)}
+@media(max-width:700px){.lote-box{padding:26px 22px}.lote-btn{width:100%;text-align:center}}
+
 .brand{background:#ffffff;border-radius:14px;min-height:112px;display:flex;align-items:center;justify-content:center;padding:20px 22px;transition:transform .25s}
 .brand:hover{transform:translateY(-4px)}
 .brand img{max-height:58px;max-width:88%;object-fit:contain}
@@ -385,6 +406,20 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:#0a0413}
     <!-- COMPOSICAO EXATA DO KIT: confirmar com a producao se entra chip de cronometragem, sacola e viseira, e atualizar a lista acima -->
   </div>
 </section>
+<!-- ═══════════════ VIRADA DE LOTE ═══════════════ -->
+<section class="lotecta" id="lote">
+  <div class="container">
+    <div class="lote-box reveal">
+      <div class="lote-txt">
+        <span class="lote-tag">⏳ Última chance</span>
+        <h2>O valor promocional acaba <em>13 de agosto</em></h2>
+        <p>Depois dessa data, a inscrição da NB Run sobe de lote. Se você vai correr, esse é o momento de garantir o menor preço.</p>
+      </div>
+      <a class="lote-btn" href="https://www.ticketsports.com.br/e/nutricao-brasil-run-2026-73880" target="_blank" rel="noopener" onclick="try{fbq('track','InitiateCheckout',{content_name:'corrida-lote-cta'})}catch(e){}">Garantir no valor promocional →</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- ═══════════════ A SEMANA ═══════════════ -->
 <section id="semana">
@@ -460,17 +495,34 @@ footer{border-top:1px solid var(--line);padding:52px 0;background:#0a0413}
 <section class="brands" id="marcas">
   <div class="container">
     <div class="reveal">
-      <div class="sec-label"><span class="ln"></span> Marcas confirmadas</div>
-      <h2 class="sec-title">Quem abastece <em>a sua corrida.</em></h2>
-      <p class="sec-desc">Referências em nutrição, performance e alimentação funcional dentro do seu kit e na arena, no dia da prova.</p>
+      <div class="sec-label"><span class="ln"></span> Patrocinadores</div>
+      <h2 class="sec-title">Quem faz a NB Run <em>acontecer</em></h2>
     </div>
-    <div class="brand-grid stagger">
-      <div class="brand big"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_420/v1775168026/Logo_Prana_Nutritrion_ypvixu.png" alt="Prana Nutrition" loading="lazy" decoding="async"></div>
+    <div class="brand-grid sponsor stagger">
+      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785962050/a_Pharmace%CC%82utica_e873va.png" alt="a Pharmacêutica" loading="lazy" decoding="async"></div>
+      <div class="brand"><img src="https://novoportal.crn1.org.br/wp-content/uploads/2024/07/crn-1-logo-header-novo.png" alt="CRN-1" loading="lazy" decoding="async"></div>
       <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785078713/Nestle_N_H_Logo_SECONDARY_Dark_RBG_mydh5a.png" alt="Nestlé Health Science" loading="lazy" decoding="async"></div>
+      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_420/v1775168026/Logo_Prana_Nutritrion_ypvixu.png" alt="Prana Nutrition" loading="lazy" decoding="async"></div>
       <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_420/v1785073930/rousselot_logo_qu9xgy.avif" alt="Rousselot" loading="lazy" decoding="async"></div>
+      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785078807/American_Quality_Pistachios_Transparente_yx3ycm.png" alt="American Pistachios" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="reveal" style="margin-top:64px">
+      <div class="sec-label"><span class="ln"></span> Abastecimento</div>
+      <h2 class="sec-title">Quem abastece a <em>sua corrida</em></h2>
+    </div>
+    <div class="brand-grid fuel stagger">
+      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785961909/TiaSonia_Logotipos_v2-4_1_dka8be.png" alt="Tia Sônia" loading="lazy" decoding="async"></div>
+      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785961937/logo-mu-tradicional_lfkkcj.png" alt="Mu" loading="lazy" decoding="async"></div>
+      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785962050/a_Pharmace%CC%82utica_e873va.png" alt="a Pharmacêutica" loading="lazy" decoding="async"></div>
+    </div>
+
+    <div class="reveal" style="margin-top:64px">
+      <div class="sec-label"><span class="ln"></span> Marcas participantes</div>
+    </div>
+    <div class="brand-grid part stagger">
       <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_420/v1775167755/bold_-_logo_rmjulr.png" alt="Bold" loading="lazy" decoding="async"></div>
       <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_420/v1785065952/logo-puravida-preto_d5vhik.png" alt="Puravida" loading="lazy" decoding="async"></div>
-      <div class="brand"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1785078807/American_Quality_Pistachios_Transparente_yx3ycm.png" alt="American Quality Pistachios" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
