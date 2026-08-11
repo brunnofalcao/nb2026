@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golden Experience | Nutrição Brasil 2026 — Experiência VIP</title>
+<title>Golden Experience | Nutrição Brasil 2026, Experiência VIP</title>
 <meta name="description" content="A experiência VIP do maior evento de nutrição do Brasil. Sala VIP, assento reservado, todos os módulos, NB Run, gravações e mentoria exclusiva com Brunno Falcão no dia 27. 12x de R$ 206,54.">
 <link rel="canonical" href="https://www.nutricaobrasil.com.br/golden">
 <meta name="geo.region" content="BR-DF"><meta name="geo.placename" content="Brasília">
@@ -240,7 +240,7 @@ section{padding:100px 0}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.nutricaobrasil.com.br/"},{"@type":"ListItem","position":2,"name":"Programação","item":"https://www.nutricaobrasil.com.br/programacao"},{"@type":"ListItem","position":3,"name":"NB Universitário","item":"https://www.nutricaobrasil.com.br/programacao/nb-universitario"}]}
 </script>
-<!-- Microsoft Clarity — heatmaps + session replay. Trocar xk8p8zm744 pelo ID gerado em clarity.microsoft.com -->
+<!-- Microsoft Clarity, heatmaps + session replay. Trocar xk8p8zm744 pelo ID gerado em clarity.microsoft.com -->
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -273,7 +273,7 @@ section{padding:100px 0}
   <div class="container">
     <span class="g-eyebrow">★ Experiência VIP</span>
     <h1>Golden Experience: viva o Nutrição Brasil <em>por dentro</em></h1>
-    <p>A forma mais completa de viver o maior evento de nutrição do Brasil. Todos os módulos, Sala VIP, assento reservado e uma mentoria exclusiva de um dia inteiro. Para quem não veio assistir — veio fazer parte.</p>
+    <p>A forma mais completa de viver o maior evento de nutrição do Brasil. Todos os módulos, Sala VIP, assento reservado e uma mentoria exclusiva de um dia inteiro. Para quem não veio assistir, veio fazer parte.</p>
     <div class="g-hero-cta">
       <a href="https://pay.hotmart.com/X104531615W?bid=1784134180438" class="g-btn-lg" target="_blank" rel="noopener" onclick="track_checkout('golden-hero')">Garantir minha vaga Golden →</a>
       <span class="price">12x de R$ 206,54<b> · ou R$ 1.997 à vista</b></span>
@@ -290,7 +290,7 @@ section{padding:100px 0}
     <div class="g-card"><div class="ic">🥂</div><h3>Lounge Exclusivo</h3><p>Um espaço reservado para networking, descanso e interações valiosas com outros membros e líderes da área.</p></div>
     <div class="g-card"><div class="ic">🎟️</div><h3>Assento Reservado</h3><p>Assentos prioritários que garantem a melhor visão e proximidade com os palestrantes, para uma imersão completa nas apresentações.</p></div>
     <div class="g-card"><div class="ic">⚡</div><h3>Credenciamento Exclusivo</h3><p>Um processo ágil e exclusivo, com entrada rápida e sem filas, para você aproveitar cada segundo do evento.</p></div>
-    <div class="g-card"><div class="ic">📚</div><h3>Todos os módulos</h3><p>Acesso completo à Plenária Principal, Nutrição Esportiva, MedBrasil e NB Universitário — mais as gravações da Plenária.</p></div>
+    <div class="g-card"><div class="ic">📚</div><h3>Todos os módulos</h3><p>Acesso completo à Plenária Principal, Nutrição Esportiva e NB Universitário, mais as gravações da Plenária.</p></div>
     <div class="g-card"><div class="ic">🏃</div><h3>Nutrição Brasil Run</h3><p>Inscrição incluída na NB Run, a corrida que fecha o evento e celebra o Dia do Nutricionista.</p></div>
     <div class="g-card"><div class="ic">💎</div><h3>Mentoria Exclusiva</h3><p>Um dia inteiro de mentoria reservada aos membros Golden, no dia 27 de agosto, das 09h às 17h.</p></div>
   </div>
@@ -301,7 +301,7 @@ section{padding:100px 0}
     <div>
       <span class="g-tag">Encontro exclusivo Golden</span>
       <h2>Um dia inteiro antes de todo mundo</h2>
-      <p>No dia 27 de agosto, das 09h às 17h, os membros Golden participam de um encontro reservado — o momento mais íntimo e estratégico do Nutrição Brasil, longe da agenda do congresso.</p>
+      <p>No dia 27 de agosto, das 09h às 17h, os membros Golden participam de um encontro reservado, o momento mais íntimo e estratégico do Nutrição Brasil, longe da agenda do congresso.</p>
       <p>É onde a rede acontece de verdade: conversas próximas, troca com líderes e um ambiente pensado para quem quer sair do evento com mais do que conteúdo.</p>
     </div>
     <div>
@@ -364,9 +364,9 @@ function submitLead(){
   var email=document.getElementById('lead-email').value.trim();
   if(!email||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)===false){alert('Por favor, informe um e-mail válido.');return}
   var lead={email:email,name:name,pagina:window.location.pathname,ts:new Date().toISOString()};
-  // 1) Backup local — nunca perde o lead, mesmo se a API falhar
+  // 1) Backup local, nunca perde o lead, mesmo se a API falhar
   try{var k='nb_leads';var arr=JSON.parse(localStorage.getItem(k)||'[]');arr.push(lead);localStorage.setItem(k,JSON.stringify(arr));console.log('[NB lead salvo]',lead)}catch(e){}
-  // 2) RD Station — método nativo via loader (sem token exposto); fallback pro endpoint de eventos
+  // 2) RD Station, método nativo via loader (sem token exposto); fallback pro endpoint de eventos
   try{
     if(window.RdIntegration&&RdIntegration.post){
       RdIntegration.post({token_rdstation:'0d0a7a2c54867e2123724757fbd2280d',identificador:'site-nutricaobrasil-lead',email:email,nome:name,cf_origem:'site-nutricaobrasil',cf_pagina:window.location.pathname});
@@ -375,7 +375,7 @@ function submitLead(){
       fetch('https://api.rd.services/platform/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
     }
   }catch(e){}
-  // 3) Conversão no GA + Pixel (sempre dispara — você vê o volume mesmo sem o RD)
+  // 3) Conversão no GA + Pixel (sempre dispara, você vê o volume mesmo sem o RD)
   try{gtag('event','generate_lead')}catch(e){}
   try{fbq('track','Lead')}catch(e){}
   // 4) Confirmação visual

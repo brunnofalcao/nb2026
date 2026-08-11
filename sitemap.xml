@@ -8,7 +8,6 @@
   <url><loc>https://www.nutricaobrasil.com.br/programacao</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.nutricaobrasil.com.br/programacao/plenaria-principal</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.nutricaobrasil.com.br/programacao/nutricao-esportiva</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.nutricaobrasil.com.br/programacao/medbrasil</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.nutricaobrasil.com.br/programacao/nb-universitario</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.nutricaobrasil.com.br/cidades</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.nutricaobrasil.com.br/corrida</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -31,4 +30,5 @@
   <url><loc>https://www.nutricaobrasil.com.br/noticias/brasilia/dia-do-nutricionista-homenagem</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.nutricaobrasil.com.br/golden</loc><lastmod>2026-07-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.nutricaobrasil.com.br/noticias/brasilia/nb-run-1-em-cada-4-corredores-nutricionista</loc><lastmod>2026-07-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.nutricaobrasil.com.br/expo</loc><lastmod>2026-08-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

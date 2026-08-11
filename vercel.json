@@ -35,6 +35,11 @@
       "source": "/nutricao-brasil-run",
       "destination": "/corrida",
       "permanent": true
+    },
+    {
+      "source": "/programacao/medbrasil",
+      "destination": "/programacao",
+      "permanent": true
     }
   ]
 }
