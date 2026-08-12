@@ -270,6 +270,17 @@ section{padding:100px 0}
 .nbu-ghost{display:block;color:#cfc6dd;font-size:13.5px;text-decoration:underline;text-underline-offset:3px}
 .nbu-ghost:hover{color:#fff}
 @media(max-width:860px){.nbu{padding:64px 0}.nbu-box{grid-template-columns:1fr;padding:38px 26px;gap:28px}}
+
+/* convite visitante */
+.vexpo{background:var(--off-white);padding:26px 0}
+.vexpo-box{background:linear-gradient(120deg,#f3ecfb,#eaf3ff);border:1px solid #e2d8f2;border-radius:22px;padding:30px 36px;display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.vexpo-tag{display:inline-block;background:#fff;border:1px solid #e2d8f2;color:var(--purple-brand);font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:10px}
+.vexpo-box h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(22px,3vw,30px);color:var(--purple-deep);line-height:1.15;margin-bottom:6px}
+.vexpo-box h2 em{font-style:italic;color:var(--purple-brand)}
+.vexpo-box p{color:var(--gray-600);font-size:14.5px;line-height:1.6;max-width:560px}
+.vexpo-btn{flex:0 0 auto;background:linear-gradient(135deg,var(--purple-brand),var(--purple-mid));color:#fff;font-weight:800;font-size:15px;padding:15px 28px;border-radius:100px;text-decoration:none;transition:.25s;white-space:nowrap}
+.vexpo-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(111,77,137,.4)}
+@media(max-width:700px){.vexpo-box{padding:24px 20px}.vexpo-btn{width:100%;text-align:center}}
 </style>
 <!-- Microsoft Clarity, heatmaps + session replay. Trocar xk8p8zm744 pelo ID gerado em clarity.microsoft.com -->
 <script type="text/javascript">
@@ -428,6 +439,20 @@ section{padding:100px 0}
     </div>
   </div>
 </section>
+<!-- ═══ CONVITE VISITANTE (expo aberta ao público) ═══ -->
+<section class="vexpo">
+  <div class="container">
+    <div class="vexpo-box">
+      <div class="vexpo-txt">
+        <span class="vexpo-tag">🎪 Expo aberta ao público</span>
+        <h2>Não é congressista? <em>Visite a feira de graça</em></h2>
+        <p>Marcas, lançamentos e degustações no Ulysses Guimarães. Quinta das 17h às 21h, sexta e sábado das 9h às 19h. Cadastro gratuito e limitado.</p>
+      </div>
+      <a class="vexpo-btn" href="/expo" onclick="try{fbq('track','ViewContent',{content_name:'home-cta-expo'})}catch(e){}">Quero visitar a expo →</a>
+    </div>
+  </div>
+</section>
+
 <section class="exp">
   <div class="container center">
     <span class="section-label"><span class="line"></span>Duas formas de viver o Nutrição Brasil</span>
