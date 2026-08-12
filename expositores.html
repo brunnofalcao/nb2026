@@ -314,7 +314,7 @@ section{padding:100px 0}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.nutricaobrasil.com.br/"},{"@type":"ListItem","position":2,"name":"Expositores","item":"https://www.nutricaobrasil.com.br/expositores"}]}
 </script>
-<!-- Microsoft Clarity — heatmaps + session replay. Trocar xk8p8zm744 pelo ID gerado em clarity.microsoft.com -->
+<!-- Microsoft Clarity, heatmaps + session replay. Trocar xk8p8zm744 pelo ID gerado em clarity.microsoft.com -->
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -333,7 +333,7 @@ section{padding:100px 0}
       <a href="/programacao">Programação</a>
       <a href="/cidades">Cidades</a>
       <a href="/corrida" target="_blank" rel="noopener">Corrida</a>
-      <a href="/expositores">Expositores</a>
+      <a href="/expo">Expo</a><a href="/expositores">Expositores</a>
       <a href="/hall-da-fama">Hall da Fama</a>
         <a href="/noticias">Notícias</a>
     </nav>
@@ -430,7 +430,7 @@ section{padding:100px 0}
             function initForm(){
               if(typeof RDStationForms==='undefined'){setTimeout(initForm,300);return}
               new RDStationForms('expositor-nb-brasilia-2026-aedf109e9cf1328415d7','UA-72189437-19').createForm();
-              // após enviar, RD dispara evento — redireciona pra /proposta
+              // após enviar, RD dispara evento, redireciona pra /proposta
               window.addEventListener('message',function(e){
                 if(e.data&&typeof e.data==='string'&&e.data.indexOf('rd-station')>-1){}
               });
@@ -475,11 +475,11 @@ section{padding:100px 0}
       <a href="/programacao">Programação</a>
       <a href="/cidades">Cidades</a>
       <a href="/corrida" target="_blank" rel="noopener">Corrida</a>
-      <a href="/expositores">Expositores</a>
+      <a href="/expo">Expo</a><a href="/expositores">Expositores</a>
       <a href="/hall-da-fama">Hall da Fama</a>
     </nav>
     <div class="footer-social">
-      <a href="https://www.instagram.com/nutricaobrasil.expo" target="_blank" rel="noopener">@nutricaobrasil.expo</a>
+      <a href="https://www.instagram.com/nutricaobrasiloficial" target="_blank" rel="noopener">@nutricaobrasiloficial</a>
       <a href="https://wa.me/5561998318817" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <p class="footer-text">
@@ -507,9 +507,9 @@ function submitLead(){
   var email=document.getElementById('lead-email').value.trim();
   if(!email||/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)===false){alert('Por favor, informe um e-mail válido.');return}
   var lead={email:email,name:name,pagina:window.location.pathname,ts:new Date().toISOString()};
-  // 1) Backup local — nunca perde o lead, mesmo se a API falhar
+  // 1) Backup local, nunca perde o lead, mesmo se a API falhar
   try{var k='nb_leads';var arr=JSON.parse(localStorage.getItem(k)||'[]');arr.push(lead);localStorage.setItem(k,JSON.stringify(arr));console.log('[NB lead salvo]',lead)}catch(e){}
-  // 2) RD Station — método nativo via loader (sem token exposto); fallback pro endpoint de eventos
+  // 2) RD Station, método nativo via loader (sem token exposto); fallback pro endpoint de eventos
   try{
     if(window.RdIntegration&&RdIntegration.post){
       RdIntegration.post({token_rdstation:'0d0a7a2c54867e2123724757fbd2280d',identificador:'site-nutricaobrasil-lead',email:email,nome:name,cf_origem:'site-nutricaobrasil',cf_pagina:window.location.pathname});
@@ -518,7 +518,7 @@ function submitLead(){
       fetch('https://api.rd.services/platform/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
     }
   }catch(e){}
-  // 3) Conversão no GA + Pixel (sempre dispara — você vê o volume mesmo sem o RD)
+  // 3) Conversão no GA + Pixel (sempre dispara, você vê o volume mesmo sem o RD)
   try{gtag('event','generate_lead')}catch(e){}
   try{fbq('track','Lead')}catch(e){}
   // 4) Confirmação visual

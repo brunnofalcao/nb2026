@@ -281,6 +281,24 @@ section{padding:100px 0}
 .vexpo-btn{flex:0 0 auto;background:linear-gradient(135deg,var(--purple-brand),var(--purple-mid));color:#fff;font-weight:800;font-size:15px;padding:15px 28px;border-radius:100px;text-decoration:none;transition:.25s;white-space:nowrap}
 .vexpo-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(111,77,137,.4)}
 @media(max-width:700px){.vexpo-box{padding:24px 20px}.vexpo-btn{width:100%;text-align:center}}
+
+/* régua de perfis (1ª dobra) */
+.hero-perfis{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.1)}
+.hp-lbl{font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-right:2px}
+.hero-perfis a{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#e9e2f5;font-size:12px;font-weight:700;padding:7px 11px;border-radius:100px;text-decoration:none;transition:.2s;white-space:nowrap}
+.hero-perfis a:hover{background:rgba(128,192,255,.18);border-color:rgba(128,192,255,.5);transform:translateY(-1px)}
+@media(max-width:600px){.hero-perfis{gap:6px}.hp-lbl{width:100%;margin-bottom:2px}.hero-perfis a{font-size:12px;padding:7px 11px;flex:1 1 44%;justify-content:center}}
+
+/* dobra garantida em laptops de tela baixa */
+@media(min-width:861px) and (max-height:820px){
+  .hero{padding-top:calc(96px + var(--lote-h,40px))}
+  .hero h1{font-size:clamp(32px,4.4vw,50px)}
+  .hero-sub{margin-bottom:16px;font-size:16px}
+  .hero-meta{margin-bottom:18px}
+  .hero-actions{gap:12px}
+  .hero-perfis{margin-top:11px;padding-top:10px}
+  .hero-card{transform:scale(.92);transform-origin:top center}
+}
 </style>
 <!-- Microsoft Clarity, heatmaps + session replay. Trocar xk8p8zm744 pelo ID gerado em clarity.microsoft.com -->
 <script type="text/javascript">
@@ -332,7 +350,7 @@ section{padding:100px 0}
       <a href="/programacao">Programação</a>
       <a href="/cidades">Cidades</a>
       <a href="/corrida" target="_blank" rel="noopener">Corrida</a>
-      <a href="/expositores">Expositores</a>
+      <a href="/expo">Expo</a><a href="/expositores">Expositores</a>
       <a href="/hall-da-fama">Hall da Fama</a>
         <a href="/noticias">Notícias</a>
     </nav>
@@ -356,6 +374,13 @@ section{padding:100px 0}
         <a href="/ingressos" class="btn-primary" onclick="track_checkout('hero')">Garantir minha vaga →</a>
         <a href="/programacao" class="btn-secondary">Ver programação</a>
       </div>
+        <div class="hero-perfis">
+          <span class="hp-lbl">Você é:</span>
+          <a href="/ingressos" onclick="try{fbq('track','ViewContent',{content_name:'hero-perfil-congressista'})}catch(e){}">🎓 Congressista</a>
+          <a href="/corrida" target="_blank" rel="noopener" onclick="try{fbq('track','ViewContent',{content_name:'hero-perfil-corredor'})}catch(e){}">🏃 Corredor</a>
+          <a href="/expo" onclick="try{fbq('track','ViewContent',{content_name:'hero-perfil-visitante'})}catch(e){}">🎪 Visitar a expo</a>
+          <a href="/expositores" onclick="try{fbq('track','ViewContent',{content_name:'hero-perfil-expositor'})}catch(e){}">🏢 Expositor</a>
+        </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
@@ -446,7 +471,7 @@ section{padding:100px 0}
       <div class="vexpo-txt">
         <span class="vexpo-tag">🎪 Expo aberta ao público</span>
         <h2>Não é congressista? <em>Visite a feira de graça</em></h2>
-        <p>Marcas, lançamentos e degustações no Ulysses Guimarães. Quinta das 17h às 21h, sexta e sábado das 9h às 19h. Cadastro gratuito e limitado.</p>
+        <p>Marcas, lançamentos e degustações no Ulysses Guimarães. Quinta das 17h às 21h, sexta e sábado das 9h às 19h. Ingresso gratuito e limitado.</p>
       </div>
       <a class="vexpo-btn" href="/expo" onclick="try{fbq('track','ViewContent',{content_name:'home-cta-expo'})}catch(e){}">Quero visitar a expo →</a>
     </div>
@@ -571,11 +596,11 @@ section{padding:100px 0}
       <a href="/programacao">Programação</a>
       <a href="/cidades">Cidades</a>
       <a href="/corrida" target="_blank" rel="noopener">Corrida</a>
-      <a href="/expositores">Expositores</a>
+      <a href="/expo">Expo</a><a href="/expositores">Expositores</a>
       <a href="/hall-da-fama">Hall da Fama</a>
     </nav>
     <div class="footer-social">
-      <a href="https://www.instagram.com/nutricaobrasil.expo" target="_blank" rel="noopener">@nutricaobrasil.expo</a>
+      <a href="https://www.instagram.com/nutricaobrasiloficial" target="_blank" rel="noopener">@nutricaobrasiloficial</a>
       <a href="https://wa.me/5561998318817" target="_blank" rel="noopener">WhatsApp</a>
     </div>
     <p class="footer-text">
