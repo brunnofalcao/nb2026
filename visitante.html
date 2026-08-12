@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
@@ -14,170 +14,146 @@
 <link rel="icon" type="image/png" href="https://res.cloudinary.com/dlzrfhwin/image/upload/v1775583229/nb_logotipo_hor_01_oet53j.png">
 <!-- Meta Pixel -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','460696430970324');fbq('track','PageView');</script>
+<noscript><img decoding="async" height="1" loading="lazy" src="https://www.facebook.com/tr?id=460696430970324&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y2HLCV0V0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-8Y2HLCV0V0');</script>
+<!-- RD Station -->
+<script async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/02414940-c939-4c7b-8397-f531c8640a72-loader.js" type="text/javascript"></script>
 <!-- Clarity -->
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xk8p8zm744");</script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ---------------------------------------------------------------
-   O visual é o do evento, mas nada aqui é obrigatório: troque as
-   cores e a fonte pelo padrão do site. O que NÃO pode mudar são os
-   atributos id= dos campos, pois é por eles que o script monta o envio.
-   --------------------------------------------------------------- */
-:root{--bg:#0d0618;--card:#1b0f2d;--card2:#160c26;--line:#2f1d4a;
-      --t1:#f4f0fa;--t2:#c3b4dd;--t3:#8b78ad;--roxo:#a78bfa;--verde:#34d399}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:radial-gradient(1100px 600px at 78% -12%,#2a1247,var(--bg) 62%) fixed;
-  color:var(--t1);font-family:Poppins,-apple-system,'Segoe UI',sans-serif;font-size:15px;line-height:1.55;min-height:100vh}
-.wrap{max-width:560px;margin:0 auto;padding:34px 20px 70px}
-.kicker{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--verde);margin-bottom:8px}
-h1{font-size:clamp(26px,6vw,34px);font-weight:700;letter-spacing:-1px;margin:0 0 10px;line-height:1.15}
-.lead{color:var(--t2);margin:0}
-.onde{font-size:13px;color:var(--t3);margin-top:6px}
-.bloco{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--line);
-  border-radius:18px;padding:22px;margin-top:22px}
-label{display:block;font-size:12px;font-weight:600;color:var(--t2);margin:0 0 6px}
-.op{font-size:11px;font-weight:500;color:var(--t3);text-transform:none}
-input,select{width:100%;background:#0f0720;border:1px solid var(--line);color:var(--t1);border-radius:11px;
-  padding:13px 12px;font-family:inherit;font-size:16px;outline:none;appearance:none}
-select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' stroke='%238b78ad' stroke-width='2' fill='none'/></svg>");
-  background-repeat:no-repeat;background-position:right 14px center}
-input:focus,select:focus{border-color:var(--roxo)}
-input.ruim,select.ruim{border-color:#f87171}
-.campo{margin-bottom:15px}
-.dupla{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:520px){.dupla{grid-template-columns:1fr}}
-.chips{display:flex;gap:8px;margin-bottom:4px}
-.chip{flex:1;background:#150c26;border:1px solid var(--line);color:var(--t2);border-radius:11px;
-  padding:12px;font-family:inherit;font-size:14px;cursor:pointer;transition:.12s}
-.chip:hover{border-color:var(--roxo)}
-.chip.on{background:rgba(167,139,250,.16);border-color:var(--roxo);color:#e5dbff;font-weight:600}
-.btn{display:block;width:100%;border:0;border-radius:12px;padding:16px;margin-top:4px;
-  font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;
-  background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;transition:.15s}
-.btn:disabled{opacity:.45;cursor:default}
-.erro-msg{color:#fca5a5;font-size:13.5px;margin-top:12px;min-height:18px}
-.aviso{font-size:12px;color:var(--t3);margin-top:14px;line-height:1.5}
+body{margin:0;background:#0d0618;background-image:radial-gradient(1100px 600px at 80% -10%,rgba(111,77,137,.35),transparent 60%);font-family:'Plus Jakarta Sans',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#80c0ff;text-decoration:none}
+a:hover{color:#a6d4ff}
+::selection{background:rgba(139,95,191,.45);color:#fff}
+:focus-visible{outline:2px solid #80c0ff;outline-offset:2px}
+@keyframes nbPulse{0%,100%{opacity:1}50%{opacity:.3}}
 .hide{display:none!important}
-/* Isca anti-robô: precisa ficar fora da tela, não "display:none":
-   robô bom ignora campo escondido, mas preenche o que está no HTML. */
+.split{max-width:1120px;margin:0 auto;padding:64px 24px 90px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,460px);gap:56px;align-items:start}
+@media(max-width:920px){.split{grid-template-columns:1fr;gap:36px}}
+label{display:block;color:#c9bcde;font-size:12px;font-weight:600;margin-bottom:6px}
+.inp{width:100%;box-sizing:border-box;background:#0f0720;border:1px solid #3a2a52;color:#f4f0fa;border-radius:12px;padding:13px 12px;font-family:inherit;font-size:16px;outline:none;appearance:none}
+.inp:focus{border-color:#8b5fbf}
+.inp.ruim{border-color:#f87171}
+.inp::placeholder{color:#8a7aa5;opacity:.7}
+.chip{flex:1;background:#0f0720;border:1px solid #3a2a52;color:#c9bcde;border-radius:12px;padding:13px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:all .12s}
+.chip:hover{border-color:#8b5fbf}
+.chip.on{background:rgba(139,95,191,.2);border-color:#8b5fbf;color:#e5dbff;font-weight:700}
 .isca{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.ok-wrap{text-align:center;padding:10px 0}
-.ok-ico{width:56px;height:56px;border-radius:50%;background:rgba(52,211,153,.15);
-  border:1px solid var(--verde);color:var(--verde);font-size:28px;line-height:56px;margin:0 auto 16px}
-.ok-cod{font-size:31px;font-weight:700;letter-spacing:3px;color:var(--verde);
-  font-family:ui-monospace,Menlo,monospace;margin:14px 0 6px}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <div id="form">
-    <div class="kicker">Entrada de visitante</div>
-    <h1>Nutrição Brasil · Brasília</h1>
-    <p class="lead">O ingresso de visitante é gratuito. Preencha uma vez e ele fica garantido no seu nome.</p>
-    <p class="onde">27 a 29 de agosto · Centro de Convenções Ulysses Guimarães · Brasília</p>
+<header style="border-bottom:1px solid #3a2a52;background:rgba(13,6,24,.6)">
+  <div style="max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="/" style="display:flex;align-items:center"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1782001627/Logo_NB_-_header_footer_kjwhyr.svg" alt="Nutrição Brasil" style="height:26px;display:block"></a>
+    <a href="/expo" style="color:#c9bcde;font-size:13.5px;font-weight:600">← Conhecer a expo</a>
+  </div>
+</header>
 
-    <div class="bloco">
-      <div class="dupla">
-        <div class="campo">
-          <label for="primeiro">Primeiro nome</label>
-          <input type="text" id="primeiro" autocomplete="given-name" placeholder="Ana">
-        </div>
-        <div class="campo">
-          <label for="ultimo">Último nome</label>
-          <input type="text" id="ultimo" autocomplete="family-name" placeholder="Souza">
-        </div>
-      </div>
-
-      <div class="campo">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" autocomplete="email" placeholder="voce@email.com">
-      </div>
-
-      <div class="campo">
-        <label for="tel">WhatsApp</label>
-        <input type="tel" id="tel" autocomplete="tel" inputmode="numeric" placeholder="(61) 99999-0000">
-      </div>
-
-      <div class="campo">
-        <label>Você é profissional da saúde?</label>
-        <div class="chips">
-          <button type="button" class="chip" id="saude-sim">Sim</button>
-          <button type="button" class="chip" id="saude-nao">Não</button>
-        </div>
-      </div>
-
-      <div class="campo hide" id="campo-formacao">
-        <label for="formacao">Qual a sua formação?</label>
-        <select id="formacao">
-          <option value="">Selecione</option>
-          <option>Nutrição</option>
-          <option>Medicina</option>
-          <option>Psicologia</option>
-          <option>Educação Física</option>
-          <option>Estudante</option>
-          <option>Outros</option>
-        </select>
-      </div>
-
-      <div class="campo">
-        <label for="estado">Estado</label>
-        <select id="estado">
-          <option value="">Selecione</option>
-          <option>Acre (AC)</option><option>Alagoas (AL)</option><option>Amapá (AP)</option>
-          <option>Amazonas (AM)</option><option>Bahia (BA)</option><option>Ceará (CE)</option>
-          <option>Distrito Federal (DF)</option><option>Espírito Santo (ES)</option><option>Goiás (GO)</option>
-          <option>Maranhão (MA)</option><option>Mato Grosso (MT)</option><option>Mato Grosso do Sul (MS)</option>
-          <option>Minas Gerais (MG)</option><option>Pará (PA)</option><option>Paraíba (PB)</option>
-          <option>Paraná (PR)</option><option>Pernambuco (PE)</option><option>Piauí (PI)</option>
-          <option>Rio de Janeiro (RJ)</option><option>Rio Grande do Norte (RN)</option><option>Rio Grande do Sul (RS)</option>
-          <option>Rondônia (RO)</option><option>Roraima (RR)</option><option>Santa Catarina (SC)</option>
-          <option>São Paulo (SP)</option><option>Sergipe (SE)</option><option>Tocantins (TO)</option>
-        </select>
-      </div>
-
-      <div class="isca" aria-hidden="true">
-        <label for="site">Não preencha este campo</label>
-        <input type="text" id="site" tabindex="-1" autocomplete="off">
-      </div>
-
-      <button class="btn" id="enviar">Garantir meu ingresso gratuito</button>
-      <div class="erro-msg" id="erro"></div>
-
-      <p class="aviso">Ao entrar, você concorda em receber pelo WhatsApp informações sobre este evento
-      e sobre o Nutrição Brasil. Dá para sair a qualquer momento respondendo à mensagem.</p>
+<section class="split">
+  <div>
+    <span style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(90,183,142,.4);background:rgba(90,183,142,.1);color:#7fe0b4;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:100px;margin-bottom:22px"><span style="width:7px;height:7px;border-radius:50%;background:#5ab78e;animation:nbPulse 2s infinite"></span>Entrada de visitante · gratuita</span>
+    <h1 style="margin:0 0 16px;color:#fff;font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-1.8px;line-height:1.06">Seu ingresso para a maior expo de nutrição do país.</h1>
+    <p style="margin:0 0 28px;color:#c9bcde;font-size:16.5px;line-height:1.7;max-width:520px">Preencha uma vez e ele fica garantido no seu nome. Marcas, lançamentos, degustações e ativações dentro do Nutrição Brasil 2026, sem custo.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:30px">
+      <span style="display:flex;align-items:flex-start;gap:11px;color:#c9bcde;font-size:14.5px;line-height:1.55"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5ab78e" stroke-width="2.4" stroke-linecap="round" style="flex:0 0 auto;margin-top:2px"><path d="M20 6L9 17l-5-5"></path></svg><span><strong style="color:#fff">Leva menos de um minuto.</strong> Cadastro único, confirmação no seu WhatsApp.</span></span>
+      <span style="display:flex;align-items:flex-start;gap:11px;color:#c9bcde;font-size:14.5px;line-height:1.55"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5ab78e" stroke-width="2.4" stroke-linecap="round" style="flex:0 0 auto;margin-top:2px"><path d="M20 6L9 17l-5-5"></path></svg><span><strong style="color:#fff">Nada para imprimir.</strong> Na entrada, basta apresentar um documento com foto.</span></span>
+      <span style="display:flex;align-items:flex-start;gap:11px;color:#c9bcde;font-size:14.5px;line-height:1.55"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5ab78e" stroke-width="2.4" stroke-linecap="round" style="flex:0 0 auto;margin-top:2px"><path d="M20 6L9 17l-5-5"></path></svg><span><strong style="color:#fff">Vale para os 3 dias de expo.</strong> Quinta das 17h às 21h, sexta e sábado das 9h às 19h.</span></span>
     </div>
+    <div style="border-radius:16px;overflow:hidden;border:1px solid #3a2a52;margin-bottom:16px">
+      <img src="assets/expo.jpg" alt="Ambiente da expo Nutrição Brasil" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover">
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;color:#8a7aa5;font-size:13px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#80c0ff" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>27 a 29 de agosto · Centro de Convenções Ulysses Guimarães · Brasília</div>
+    <div style="margin-top:26px;padding-top:22px;border-top:1px solid #3a2a52;color:#8a7aa5;font-size:13.5px;line-height:1.6">Quer viver o evento completo, com congresso e palestras? <a href="/ingressos" style="color:#80c0ff;font-weight:700">Veja os ingressos →</a></div>
   </div>
 
-  <div id="pronto" class="hide">
-    <div class="bloco ok-wrap">
-      <div class="ok-ico">✓</div>
-      <h1 id="ok-ttl" style="font-size:24px">Tudo certo!</h1>
-      <p class="lead" id="ok-sub">Seu ingresso está garantido. Enviamos a confirmação no seu WhatsApp.</p>
-      <div class="ok-cod" id="ok-cod">•••</div>
-      <p class="onde">Número do seu ingresso, só para referência. Você não precisa anotar nada: a confirmação está no seu WhatsApp e, na entrada do evento, basta apresentar um documento com foto.</p>
+  <div>
+    <div id="form">
+      <div style="background:linear-gradient(180deg,#1a0f2e,#160c26);border:1px solid #3a2a52;border-radius:16px;padding:28px 26px;box-shadow:0 30px 80px rgba(0,0,0,.45)">
+        <div style="color:#fff;font-weight:800;font-size:19px;letter-spacing:-.4px;margin-bottom:4px">Garanta seu ingresso gratuito</div>
+        <div style="color:#8a7aa5;font-size:13px;margin-bottom:22px">Vagas limitadas. Quando acabam, acabou.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+          <div><label for="primeiro">Primeiro nome</label><input type="text" id="primeiro" class="inp" autocomplete="given-name" placeholder="Ana"></div>
+          <div><label for="ultimo">Último nome</label><input type="text" id="ultimo" class="inp" autocomplete="family-name" placeholder="Souza"></div>
+        </div>
+        <div style="margin-bottom:14px"><label for="email">E-mail</label><input type="email" id="email" class="inp" autocomplete="email" placeholder="voce@email.com"></div>
+        <div style="margin-bottom:14px"><label for="tel">WhatsApp</label><input type="tel" id="tel" class="inp" autocomplete="tel" inputmode="numeric" placeholder="(61) 99999-0000"></div>
+        <div style="margin-bottom:14px">
+          <label>Você é profissional da saúde?</label>
+          <div style="display:flex;gap:8px">
+            <button type="button" class="chip" id="saude-sim">Sim</button>
+            <button type="button" class="chip" id="saude-nao">Não</button>
+          </div>
+        </div>
+        <div class="hide" id="campo-formacao" style="margin-bottom:14px">
+          <label for="formacao">Qual a sua formação?</label>
+          <select id="formacao" class="inp" style="background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' stroke='%238b78ad' stroke-width='2' fill='none'/></svg>&quot;);background-repeat:no-repeat;background-position:right 14px center">
+            <option value="">Selecione</option>
+            <option>Nutrição</option>
+            <option>Medicina</option>
+            <option>Psicologia</option>
+            <option>Educação Física</option>
+            <option>Estudante</option>
+            <option>Outros</option>
+          </select>
+        </div>
+        <div style="margin-bottom:18px">
+          <label for="estado">Estado</label>
+          <select id="estado" class="inp" style="background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' stroke='%238b78ad' stroke-width='2' fill='none'/></svg>&quot;);background-repeat:no-repeat;background-position:right 14px center">
+            <option value="">Selecione</option>
+            <option>Acre (AC)</option><option>Alagoas (AL)</option><option>Amapá (AP)</option>
+            <option>Amazonas (AM)</option><option>Bahia (BA)</option><option>Ceará (CE)</option>
+            <option>Distrito Federal (DF)</option><option>Espírito Santo (ES)</option><option>Goiás (GO)</option>
+            <option>Maranhão (MA)</option><option>Mato Grosso (MT)</option><option>Mato Grosso do Sul (MS)</option>
+            <option>Minas Gerais (MG)</option><option>Pará (PA)</option><option>Paraíba (PB)</option>
+            <option>Paraná (PR)</option><option>Pernambuco (PE)</option><option>Piauí (PI)</option>
+            <option>Rio de Janeiro (RJ)</option><option>Rio Grande do Norte (RN)</option><option>Rio Grande do Sul (RS)</option>
+            <option>Rondônia (RO)</option><option>Roraima (RR)</option><option>Santa Catarina (SC)</option>
+            <option>São Paulo (SP)</option><option>Sergipe (SE)</option><option>Tocantins (TO)</option>
+          </select>
+        </div>
+        <div class="isca" aria-hidden="true">
+          <label for="site">Não preencha este campo</label>
+          <input type="text" id="site" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="button" id="enviar" style="display:block;width:100%;border:0;border-radius:12px;padding:17px;font-family:inherit;font-size:14px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;background:#5ab78e;color:#07130d">Garantir meu ingresso gratuito</button>
+        <div id="erro" style="color:#fca5a5;font-size:13.5px;margin-top:12px;min-height:18px"></div>
+        <p style="margin:6px 0 0;color:#8a7aa5;font-size:12px;line-height:1.55">Ao entrar, você concorda em receber pelo WhatsApp informações sobre este evento e sobre o Nutrição Brasil. Dá para sair a qualquer momento respondendo à mensagem.</p>
+      </div>
+    </div>
+
+    <div id="pronto" class="hide">
+      <div style="background:linear-gradient(180deg,#1a0f2e,#160c26);border:1px solid rgba(90,183,142,.5);border-radius:16px;padding:40px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.45)">
+        <div style="width:58px;height:58px;border-radius:50%;background:rgba(90,183,142,.14);border:1px solid #5ab78e;color:#5ab78e;font-size:28px;line-height:58px;margin:0 auto 18px;font-weight:800">✓</div>
+        <h2 id="ok-ttl" style="margin:0 0 8px;color:#fff;font-size:24px;font-weight:800;letter-spacing:-.6px">Tudo certo!</h2>
+        <p id="ok-sub" style="margin:0;color:#c9bcde;font-size:15px;line-height:1.6">Seu ingresso está garantido. Enviamos a confirmação no seu WhatsApp.</p>
+        <div id="ok-cod" style="font-size:30px;font-weight:800;letter-spacing:3px;color:#5ab78e;font-family:ui-monospace,Menlo,monospace;margin:18px 0 8px">•••</div>
+        <p style="margin:0;color:#8a7aa5;font-size:12.5px;line-height:1.6">Número do seu ingresso, só para referência. A confirmação está no seu WhatsApp e, na entrada do evento, basta apresentar um documento com foto.</p>
+        <a href="/expo" style="display:inline-block;margin-top:22px;color:#80c0ff;font-weight:700;font-size:14px">Ver o que te espera na expo →</a>
+      </div>
     </div>
   </div>
+</section>
 
-</div>
+<footer style="border-top:1px solid #3a2a52;padding:44px 24px;text-align:center">
+  <div style="display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:18px">
+    <img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1782001627/Logo_NB_-_header_footer_kjwhyr.svg" alt="Nutrição Brasil" style="height:24px">
+    <span style="width:1px;height:20px;background:#3a2a52"></span>
+    <img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1776336705/Logo_SP_negativa_izuzur.png" alt="Science Play" style="height:22px;opacity:.85">
+  </div>
+  <p style="margin:0;color:#8a7aa5;font-size:12px;line-height:1.8;opacity:.7">Nutrição Brasil 2026 · Centro de Convenções Ulysses Guimarães, Brasília/DF · Realização Science Play</p>
+</footer>
 
 <script>
-// =====================================================================
-// Um endereço só. Ele grava na lista do credenciamento, manda o lead
-// para o RD Station e dispara a confirmação no WhatsApp, nesta ordem,
-// e a inscrição vale mesmo se o RD ou o WhatsApp falharem.
-//
-// Não há chave, token nem senha nesta página de propósito: quem sabe
-// em qual evento gravar é o servidor.
-// =====================================================================
+// Mesmo endereço da versão anterior: grava no credenciamento, envia ao RD e dispara o WhatsApp.
 const API = 'https://tjrarpnqoemdhxjjbtgk.supabase.co/functions/v1/visitante-inscreve';
-
 const $ = (id) => document.getElementById(id);
-let saude = null;   // null = ainda não respondeu
-
+let saude = null;
 function marcaSaude(v) {
   saude = v;
   $('saude-sim').classList.toggle('on', v === true);
@@ -186,8 +162,6 @@ function marcaSaude(v) {
 }
 $('saude-sim').onclick = () => marcaSaude(true);
 $('saude-nao').onclick = () => marcaSaude(false);
-
-// Máscara leve: formata, nunca impede de digitar.
 $('tel').addEventListener('input', (e) => {
   const d = e.target.value.replace(/\D/g, '').slice(0, 11);
   e.target.value =
@@ -196,26 +170,21 @@ $('tel').addEventListener('input', (e) => {
     d.length <= 10 ? `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}`
                    : `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
 });
-
 ['primeiro','ultimo','email','tel','estado','formacao'].forEach((id) =>
   $(id).addEventListener('input', () => $(id).classList.remove('ruim')));
-
 function falha(id, msg) {
   $(id).classList.add('ruim');
   $(id).focus();
   $('erro').textContent = msg;
   return false;
 }
-
 $('enviar').addEventListener('click', async () => {
   const btn = $('enviar');
   $('erro').textContent = '';
-
   const primeiro = $('primeiro').value.trim();
   const ultimo   = $('ultimo').value.trim();
   const email    = $('email').value.trim();
   const tel      = $('tel').value.replace(/\D/g, '');
-
   if (!primeiro) return falha('primeiro', 'Falta o primeiro nome.');
   if (!ultimo)   return falha('ultimo', 'Falta o sobrenome. É o nome que vai no seu ingresso.');
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return falha('email', 'Esse e-mail não parece certo.');
@@ -223,10 +192,8 @@ $('enviar').addEventListener('click', async () => {
   if (saude === null) { $('erro').textContent = 'Diga se você é profissional da saúde.'; return; }
   if (saude === true && !$('formacao').value) return falha('formacao', 'Escolha a sua formação.');
   if (!$('estado').value) return falha('estado', 'Escolha o seu estado.');
-
   btn.disabled = true;
   btn.textContent = 'Confirmando…';
-
   try {
     const res = await fetch(API, {
       method: 'POST',
@@ -240,13 +207,12 @@ $('enviar').addEventListener('click', async () => {
         formacao: $('formacao').value,
         estado: $('estado').value,
         origem: 'site-oficial',
-        site: $('site').value        // isca: vem vazio de gente de verdade
+        site: $('site').value
       })
     });
     const data = await res.json();
     if (!res.ok || data.erro) throw new Error(data.mensagem || 'Não deu para concluir.');
-
-    $('ok-cod').textContent = data.codigo || ', ';
+    $('ok-cod').textContent = data.codigo || '';
     $('ok-ttl').textContent = data.novo ? `Tudo certo, ${data.nome}!` : `Você já estava aqui, ${data.nome}!`;
     $('ok-sub').textContent = data.novo
       ? 'Seu ingresso está garantido. Enviamos a confirmação no seu WhatsApp.'
