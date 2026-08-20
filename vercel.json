@@ -37,6 +37,11 @@
       "permanent": true
     },
     {
+      "source": "/porto-alegre",
+      "destination": "/portoalegre",
+      "permanent": true
+    },
+    {
       "source": "/programacao/medbrasil",
       "destination": "/programacao",
       "permanent": true
