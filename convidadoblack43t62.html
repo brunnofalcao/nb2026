@@ -53,7 +53,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
   </div>
 
   <h1 style="margin:0 0 14px;color:#fff;font-size:clamp(30px,6vw,44px);font-weight:800;letter-spacing:-1.4px;line-height:1.08;text-align:center">Este convite tem o seu nome.</h1>
-  <p style="margin:0 auto 26px;color:#c9bcde;font-size:16px;line-height:1.7;max-width:560px;text-align:center">Você está no BLACK, o círculo de convidados do Nutrição Brasil. A credencial preta, a mesma linha dos patrocinadores do evento, com uma caixa press kit reservada no seu nome. Confirme os dados abaixo para garantir o seu acesso.</p>
+  <p style="margin:0 auto 26px;color:#c9bcde;font-size:16px;line-height:1.7;max-width:560px;text-align:center">Este é um convite exclusivo do Nutrição Brasil, emitido no seu nome. Confirme sua presença abaixo para reservar a sua credencial de acesso.</p>
 
   <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
     <div style="display:flex;align-items:center;gap:13px;background:#140c22;border:1px solid #33244d;border-radius:13px;padding:15px 17px">
@@ -72,7 +72,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
 
   <div id="form">
     <div style="background:linear-gradient(180deg,#160d24,#120a1e);border:1px solid #33244d;border-radius:16px;padding:28px 26px;box-shadow:0 30px 80px rgba(0,0,0,.5);margin-top:22px">
-      <div style="color:#fff;font-weight:800;font-size:19px;letter-spacing:-.4px;margin-bottom:4px">Confirme o seu convite</div>
+      <div style="color:#fff;font-weight:800;font-size:19px;letter-spacing:-.4px;margin-bottom:4px">RSVP · Confirme sua presença</div>
       <div style="color:#8a7aa5;font-size:13px;margin-bottom:22px">Leva menos de um minuto. A confirmação chega no seu WhatsApp e no seu e-mail.</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
         <div><label for="primeiro">Primeiro nome</label><input type="text" id="primeiro" class="inp" autocomplete="given-name" placeholder="Ana"></div>
@@ -85,7 +85,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
         <label for="site">Não preencha este campo</label>
         <input type="text" id="site" tabindex="-1" autocomplete="off">
       </div>
-      <button type="button" id="enviar" class="bt">Confirmar meu acesso BLACK</button>
+      <button type="button" id="enviar" class="bt">Confirmar presença</button>
       <div id="erro" style="color:#fca5a5;font-size:13.5px;margin-top:12px;min-height:18px"></div>
       <p style="margin:6px 0 0;color:#8a7aa5;font-size:12px;line-height:1.55">Este é um convite pessoal e intransferível. Ao confirmar, você concorda em receber pelo WhatsApp e por e-mail as comunicações do Nutrição Brasil sobre o seu acesso.</p>
     </div>
@@ -94,7 +94,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
   <div id="pronto" class="hide">
     <div style="background:linear-gradient(180deg,#160d24,#120a1e);border:1px solid rgba(255,200,0,.6);border-radius:16px;padding:38px 28px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5);margin-top:22px">
       <div style="width:58px;height:58px;border-radius:50%;background:rgba(255,200,0,.12);border:1px solid #ffc800;color:#ffc800;font-size:28px;line-height:58px;margin:0 auto 16px;font-weight:800">✓</div>
-      <h2 id="ok-ttl" style="margin:0 0 8px;color:#fff;font-size:24px;font-weight:800;letter-spacing:-.6px">Convite confirmado!</h2>
+      <h2 id="ok-ttl" style="margin:0 0 8px;color:#fff;font-size:24px;font-weight:800;letter-spacing:-.6px">Presença confirmada!</h2>
       <p id="ok-sub" style="margin:0 0 22px;color:#c9bcde;font-size:15px;line-height:1.65">Enviamos os detalhes no seu WhatsApp e no seu e-mail.</p>
       <div style="background:#0d0718;border:1px solid #33244d;border-radius:12px;padding:20px;margin-bottom:22px">
         <div style="color:#8a7aa5;font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:8px">Seu código de acesso</div>
@@ -103,7 +103,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
       <div style="text-align:left;color:#c9bcde;font-size:14px;line-height:1.75">
         <div style="margin-bottom:8px"><strong style="color:#fff">1.</strong> No credenciamento, informe seu nome completo e apresente este código.</div>
         <div style="margin-bottom:8px"><strong style="color:#fff">2.</strong> Nosso time faz a segunda confirmação: a validação nominal na lista de convidados.</div>
-        <div><strong style="color:#fff">3.</strong> Validação feita, você recebe a sua credencial BLACK e a sua caixa press kit. Não precisa imprimir nada.</div>
+        <div><strong style="color:#fff">3.</strong> Validação feita, você recebe a sua credencial de acesso. Não precisa imprimir nada.</div>
       </div>
     </div>
   </div>
@@ -167,7 +167,7 @@ $('enviar').addEventListener('click',async()=>{
     });
     const data=await res.json();
     if(!res.ok||data.erro)throw new Error(data.mensagem||'Não deu para concluir.');
-    $('ok-ttl').textContent=data.novo?`Convite confirmado, ${data.nome}!`:`Seu convite já estava confirmado, ${data.nome}!`;
+    $('ok-ttl').textContent=(data.novo?'Presença confirmada':'Sua presença já estava confirmada')+`, ${data.nome}!`;
     $('ok-sub').textContent=data.novo
       ?'Enviamos os detalhes no seu WhatsApp e no seu e-mail. Guarde o código abaixo.'
       :'O seu código continua o mesmo. Guarde o número abaixo para o dia do evento.';
@@ -179,7 +179,7 @@ $('enviar').addEventListener('click',async()=>{
   }catch(e){
     $('erro').textContent=e.message||'Não deu para concluir. Tente de novo.';
     btn.disabled=false;
-    btn.textContent='Confirmar meu acesso BLACK';
+    btn.textContent='Confirmar presença';
   }
 });
 </script>

@@ -53,7 +53,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
   </div>
 
   <h1 style="margin:0 0 14px;color:#fff;font-size:clamp(30px,6vw,44px);font-weight:800;letter-spacing:-1.4px;line-height:1.08;text-align:center">Sua credencial de imprensa está reservada.</h1>
-  <p style="margin:0 auto 26px;color:#c9bcde;font-size:16px;line-height:1.7;max-width:560px;text-align:center">Bem-vindo à cobertura oficial do Nutrição Brasil, o maior evento de nutrição do Brasil. Credencial preta de acesso, a mesma linha dos patrocinadores, e uma caixa press kit com o material oficial no seu nome. Confirme os dados abaixo para garantir a sua credencial.</p>
+  <p style="margin:0 auto 26px;color:#c9bcde;font-size:16px;line-height:1.7;max-width:560px;text-align:center">Bem-vindo à cobertura oficial do Nutrição Brasil, o maior evento de nutrição do Brasil. Confirme os dados abaixo para reservar a sua credencial de acesso.</p>
 
   <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
     <div style="display:flex;align-items:center;gap:13px;background:#140c22;border:1px solid #33244d;border-radius:13px;padding:15px 17px">
@@ -95,7 +95,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
   <div id="pronto" class="hide">
     <div style="background:linear-gradient(180deg,#160d24,#120a1e);border:1px solid rgba(255,200,0,.6);border-radius:16px;padding:38px 28px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5);margin-top:22px">
       <div style="width:58px;height:58px;border-radius:50%;background:rgba(255,200,0,.12);border:1px solid #ffc800;color:#ffc800;font-size:28px;line-height:58px;margin:0 auto 16px;font-weight:800">✓</div>
-      <h2 id="ok-ttl" style="margin:0 0 8px;color:#fff;font-size:24px;font-weight:800;letter-spacing:-.6px">Convite confirmado!</h2>
+      <h2 id="ok-ttl" style="margin:0 0 8px;color:#fff;font-size:24px;font-weight:800;letter-spacing:-.6px">Credencial confirmada!</h2>
       <p id="ok-sub" style="margin:0 0 22px;color:#c9bcde;font-size:15px;line-height:1.65">Enviamos os detalhes no seu WhatsApp e no seu e-mail.</p>
       <div style="background:#0d0718;border:1px solid #33244d;border-radius:12px;padding:20px;margin-bottom:22px">
         <div style="color:#8a7aa5;font-size:10.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:8px">Seu código de acesso</div>
@@ -104,7 +104,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0)}
       <div style="text-align:left;color:#c9bcde;font-size:14px;line-height:1.75">
         <div style="margin-bottom:8px"><strong style="color:#fff">1.</strong> No credenciamento, informe seu nome completo e apresente este código.</div>
         <div style="margin-bottom:8px"><strong style="color:#fff">2.</strong> Nosso time faz a segunda confirmação: a validação nominal na lista de convidados.</div>
-        <div><strong style="color:#fff">3.</strong> Validação feita, você recebe a sua credencial de imprensa e a sua caixa press kit. Não precisa imprimir nada.</div>
+        <div><strong style="color:#fff">3.</strong> Validação feita, você recebe a sua credencial de imprensa. Não precisa imprimir nada.</div>
       </div>
     </div>
   </div>
@@ -170,7 +170,7 @@ $('enviar').addEventListener('click',async()=>{
     });
     const data=await res.json();
     if(!res.ok||data.erro)throw new Error(data.mensagem||'Não deu para concluir.');
-    $('ok-ttl').textContent=data.novo?`Convite confirmado, ${data.nome}!`:`Seu convite já estava confirmado, ${data.nome}!`;
+    $('ok-ttl').textContent=(data.novo?'Credencial confirmada':'Sua credencial já estava confirmada')+`, ${data.nome}!`;
     $('ok-sub').textContent=data.novo
       ?'Enviamos os detalhes no seu WhatsApp e no seu e-mail. Guarde o código abaixo.'
       :'O seu código continua o mesmo. Guarde o número abaixo para o dia do evento.';
