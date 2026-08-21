@@ -45,6 +45,11 @@
       "source": "/programacao/medbrasil",
       "destination": "/programacao",
       "permanent": true
+    },
+    {
+      "source": "/release2026",
+      "destination": "/assets/release-oficial-nb2026.pdf",
+      "permanent": false
     }
   ]
 }
