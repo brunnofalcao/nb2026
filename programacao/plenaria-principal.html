@@ -87,6 +87,13 @@ header nav a{white-space:nowrap!important;padding:8px 0!important;font-size:13px
 </style>
 </head>
 <body>
+<div id="lote-bar" role="status" style="background:linear-gradient(100deg,#7d1120,#4a0e2e 60%,#2a0a24);border-bottom:2px solid #ffc800;padding:13px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;color:#fff;text-align:center">
+<span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,200,0,.16);border:1px solid rgba(255,200,0,.55);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#ffc800;white-space:nowrap"><span class="lb-dot" style="width:8px;height:8px;border-radius:50%;background:#ff4d4d;display:inline-block"></span>3º Lote · Último promocional</span>
+<span id="lbMsg" style="font-weight:700;font-size:14px">Encerra segunda, <strong style="font-weight:800;color:#ffc800">24/08, às 23h59</strong>. Depois disso, preço original.</span>
+<span id="lbCount" style="display:inline-flex;gap:6px;align-items:center;font-variant-numeric:tabular-nums"></span>
+<a href="/ingressos" onclick="try{track_checkout('lote-bar')}catch(e){}" style="background:#ffc800;color:#2a0a24;font-weight:800;font-size:13.5px;padding:9px 20px;border-radius:100px;white-space:nowrap;text-decoration:none">Garantir no último promocional →</a>
+</div>
+
 <!-- TOPBAR -->
 <header style="position:sticky;top:0;z-index:50;background:rgba(13,6,24,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid #3a2a52">
   <div style="max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
@@ -263,5 +270,6 @@ header nav a{white-space:nowrap!important;padding:8px 0!important;font-size:13px
 </footer>
 <script>function track_checkout(origin){try{fbq('track','InitiateCheckout',{content_name:origin});gtag('event','begin_checkout',{origin:origin})}catch(e){}}</script>
 
+<script>(function(){var deadline=new Date('2026-08-24T23:59:59-03:00').getTime();var el=document.getElementById('lbCount');var msg=document.getElementById('lbMsg');if(!el)return;function chip(v,l){return '<b style="background:rgba(255,255,255,.14);border-radius:6px;padding:2px 8px;font-weight:800">'+v+l+'</b>'}function tick(){var d=deadline-Date.now();if(d<=0){if(msg)msg.innerHTML='<strong style=\"font-weight:800\">Último promocional encerrado.</strong> Vigora o preço original.';el.innerHTML='';var bd=document.querySelector('#lote-bar>span');if(bd)bd.style.display='none';var bt=document.querySelector('#lote-bar a');if(bt)bt.textContent='Garantir minha vaga →';clearInterval(iv);return}el.innerHTML=chip(Math.floor(d/864e5),'d')+chip(('0'+Math.floor(d%864e5/36e5)).slice(-2),'h')+chip(('0'+Math.floor(d%36e5/6e4)).slice(-2),'m')+chip(('0'+Math.floor(d%6e4/1e3)).slice(-2),'s')}tick();var iv=setInterval(tick,1000)})();</script>
 </body>
 </html>
