@@ -508,7 +508,7 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 
 /* ── CONFIG — edite só aqui ─────────────────────────────── */
 var CFG = {
-  checkoutUrl:   "",                              // URL do checkout (Hotmart/Eduzz/Stripe). Vazio = rola até a oferta.
+  checkoutUrl:   "https://pay.hotmart.com/W107348080O?off=c57fz31b",                              // URL do checkout (Hotmart/Eduzz/Stripe). Vazio = rola até a oferta.
   precoLote1:    397,
   precoLote2:    497,
   precoPorta:    697,                              // valor no local, no dia
@@ -543,7 +543,7 @@ function aplicaCheckout(){
   });
 }
 function totalAtual(){return dupla?Math.round(CFG.precoLote1*2*0.875):CFG.precoLote1;}
-function parcelaBase(){return Math.round(CFG.precoLote1*1.2387/12*100)/100;}
+function parcelaBase(){return Math.round(CFG.precoLote1*1.2411/12*100)/100;}
 
 /* schema.org gerado do CFG — preço, oferta e FAQ nunca ficam defasados */
 function pintaSchema(){
@@ -570,7 +570,7 @@ function pintaSchema(){
 
 /* preços */
 function pintaPrecos(){
-  var total=totalAtual(), parcela=Math.round(total*1.2387/12*100)/100;
+  var total=totalAtual(), parcela=Math.round(total*1.2411/12*100)/100;
   setAll("[data-preco-vista]",brl(CFG.precoLote1));
   setAll("[data-preco-lote2]",brl(CFG.precoLote2));
   setAll("[data-preco-porta]",brl(CFG.precoPorta));
