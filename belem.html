@@ -259,19 +259,24 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 .stick{left:auto;right:26px;bottom:26px}
 .stick-in{max-width:none;border:1px solid var(--roxo);border-radius:100px;padding:10px 10px 10px 24px;box-shadow:0 20px 50px rgba(0,0,0,.55)}
 }
-@media(max-width:560px){.hdr .tick{display:none}}
+@media(max-width:860px){html,body{overflow-x:hidden}header>div{flex-wrap:wrap!important;row-gap:6px!important;padding:12px 16px!important}header nav{order:3!important;width:100%!important;flex-wrap:nowrap!important;justify-content:flex-start!important;gap:22px!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch;scrollbar-width:none}header nav::-webkit-scrollbar{display:none}}
 </style>
 </head>
 <body>
 
-<header class="hdr">
-<div class="wrap pad hdr-in">
-<a class="brand" href="/" aria-label="Nutrição Brasil, ir para a home"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1782001627/Logo_NB_-_header_footer_kjwhyr.svg" alt="Nutrição Brasil" width="120" height="22"><span>BELÉM</span></a>
-<div style="display:flex;align-items:center;gap:14px">
-<a href="/cidades" style="color:var(--txt3);font-size:12.5px;font-weight:700;white-space:nowrap;text-decoration:none">Cidades</a><span class="tick"><span class="dot"></span><span data-ticker>Lote 1</span></span>
-<a class="dsk btn btn-p" data-checkout href="#oferta" style="flex:none;font-size:13px;letter-spacing:.4px;padding:13px 22px;border-radius:100px;box-shadow:none">Garantir vaga</a>
-</div>
-</div>
+<header style="position:sticky;top:0;z-index:50;background:rgba(13,6,24,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid #3a2a52">
+  <div style="max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="/" style="display:flex;align-items:center"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1782001627/Logo_NB_-_header_footer_kjwhyr.svg" alt="Nutrição Brasil" style="height:28px;display:block"><span style="border-left:1px solid #3a2a52;margin-left:12px;padding-left:12px;color:#80c0ff;font-weight:800;font-size:13px;letter-spacing:2px;text-transform:uppercase">Belém</span></a>
+    <nav style="display:flex;align-items:center;gap:26px;flex-wrap:wrap">
+      <a href="/programacao" style="color:#c9bcde;font-size:13.5px;font-weight:600" class="sx1">Programação</a>
+      <a href="/ingressos" style="color:#c9bcde;font-size:13.5px;font-weight:600" class="sx2">Ingressos</a>
+      <a href="/corrida" style="color:#c9bcde;font-size:13.5px;font-weight:600" class="sx3">NB Run</a>
+      <a href="/expo" style="color:#c9bcde;font-size:13.5px;font-weight:600" class="sx4">Expo</a>
+      <a href="/expositores" style="color:#c9bcde;font-size:13.5px;font-weight:600" class="sx5">Seja expositor</a>
+      <a href="/cidades" style="color:#c9bcde;font-size:13.5px;font-weight:600" class="sx6">Cidades</a>
+    </nav>
+    <a data-checkout href="#oferta" style="background:#5ab78e;color:#07130d;font-weight:800;font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;padding:12px 22px;border-radius:12px;white-space:nowrap" class="sx7">Garantir vaga</a>
+  </div>
 </header>
 
 <main>
@@ -284,7 +289,7 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 <div>
 <span class="kicker"><span class="dot"></span>Último lote promocional</span>
 <h1 class="h1">A nutrição do Brasil chega a <span class="serif" style="color:var(--azul)">Belém</span>.</h1>
-<p class="lead" style="margin:0 0 20px;max-width:560px">Um dia inteiro sobre o novo corpo: <strong style="color:#fff;font-weight:700">metabólico, mental e muscular</strong>. Não é uma versão regional adaptada, é a operação nacional inteira, no Centro-Oeste.</p>
+<p class="lead" style="margin:0 0 20px;max-width:560px">Um dia inteiro sobre o novo corpo: <strong style="color:#fff;font-weight:700">metabólico, mental e muscular</strong>. Não é uma versão regional adaptada, é a operação nacional inteira, no Norte.</p>
 <div class="facts">
 <a class="fact" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Nutri%C3%A7%C3%A3o+Brasil+Bel%C3%A9m&amp;dates=20260919T120000Z/20260920T000000Z&amp;location=Hotel+Sagres%2C+Bel%C3%A9m+-+PA"><b>Quando</b><i>19 set · sáb · 09h</i><u>+ salvar na agenda</u></a>
 <a class="fact" target="_blank" rel="noopener" href="https://maps.google.com/?q=Hotel+Sagres+Bel%C3%A9m+PA"><b>Onde</b><i>Hotel Sagres</i><u>+ ver no mapa</u></a>
@@ -293,7 +298,7 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 <a class="btn btn-p" data-checkout href="#oferta">Garantir minha vaga · <span data-preco-vista>R$ 397</span> →</a>
 <a class="btn btn-s" href="#programacao">Ver o dia hora a hora</a>
 </div>
-<p class="trust"><span class="faces"><i style="background:linear-gradient(135deg,#6f4d89,#8b5fbf)"></i><i style="background:linear-gradient(135deg,#8b5fbf,#4f7fb8)"></i><i style="background:linear-gradient(135deg,#4f7fb8,#80c0ff)"></i></span><span>8 referências no palco · 7 marcas líderes · 1 dia que muda a conduta de segunda-feira</span></p>
+<p class="trust"><span class="faces"><i style="background:linear-gradient(135deg,#6f4d89,#8b5fbf)"></i><i style="background:linear-gradient(135deg,#8b5fbf,#4f7fb8)"></i><i style="background:linear-gradient(135deg,#4f7fb8,#80c0ff)"></i></span><span>8 referências no palco · 7 marcas · Bag Experience inclusa · 1 dia que muda a conduta de segunda-feira</span></p>
 </div>
 
 <aside class="urg">
@@ -357,13 +362,13 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 
 <section class="wrap pad sec">
 <h2 class="h2">As edições anteriores</h2>
-<p class="sub">A mesma operação que agora chega ao Centro-Oeste.</p>
+<p class="sub">A mesma operação que agora chega ao Norte.</p>
 <div class="shots">
 <img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_900/v1775584356/NB_Balneario_-_Bag_Experience_2_bnn1mh.jpg" alt="Imersão Nutrição Brasil · edição anterior">
 <img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_900/v1775584357/NB_Balneario_-_Bag_Experience_3_jnjydq.jpg" alt="Imersão Nutrição Brasil · edição anterior">
 <img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_900/v1775584357/NB_Balneario_-_Bag_Experience_4_afcfoc.jpg" alt="Imersão Nutrição Brasil · edição anterior">
 </div>
-<div class="marcas"><img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_220,f_auto,q_auto/v1775583352/nestle_health_Science_negativa_nmm30z.png" alt="Nestlé Health Science"><img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_220,f_auto,q_auto/v1777314327/ROUSSELOT_ldegge.png" alt="Rousselot"><img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_220,f_auto,q_auto/v1777314343/prana_slogan_01-branca_nqr6w9.png" alt="Prana"><img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_220,f_auto,q_auto/v1775167748/Belive_-_logo_com_box_fsscco.png" alt="Belive"><img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_220,f_auto,q_auto/v1775167755/bold_-_logo_rmjulr.png" alt="Bold"><img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_220,f_auto,q_auto/v1778467332/Logo_Personale_gv76qv.png" alt="Farmácia Personale"><img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_220,f_auto,q_auto/v1779805358/Clinica_Rhinos_iiu0hf.png" alt="Clínica Rhinos"></div>
+<div style="color:#8a7aa5;font:800 10px/1 Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;text-align:center">Patrocinio</div><div class="marcas" style="margin-bottom:22px"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_440,f_auto,q_auto,dpr_2.0/v1785078713/Nestle_N_H_Logo_SECONDARY_Dark_RBG_mydh5a.png" alt="Nestle Nutrition" style="height:32px;width:auto"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_440,f_auto,q_auto,dpr_2.0/v1777314327/ROUSSELOT_ldegge.png" alt="Rousselot" style="height:30px;width:auto"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_440,f_auto,q_auto,dpr_2.0/v1777314343/prana_slogan_01-branca_nqr6w9.png" alt="Prana Nutrition" style="height:30px;width:auto"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_440,f_auto,q_auto,dpr_2.0/v1778467332/Logo_Personale_gv76qv.png" alt="Farmacia Personale" style="height:30px;width:auto"></div><div style="color:#8a7aa5;font:800 10px/1 Arial,Helvetica,sans-serif;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;text-align:center">Apoio</div><div class="marcas" style="margin-bottom:22px"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_440,f_auto,q_auto,dpr_2.0/v1775167755/bold_-_logo_rmjulr.png" alt="Bold" style="height:26px;width:auto"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_440,f_auto,q_auto,dpr_2.0/v1775167748/Belive_-_logo_com_box_fsscco.png" alt="Belive" style="height:26px;width:auto"><img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/w_440,f_auto,q_auto,dpr_2.0/v1779805358/Clinica_Rhinos_iiu0hf.png" alt="Clinica Rhinos" style="height:30px;width:auto"></div>
 </section>
 
 <section class="wrap pad sec" id="oferta">
@@ -371,12 +376,12 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 <p class="sub">Último lote promocional. Encerra em 19 de setembro.</p>
 <div class="offer">
 <div class="stack">
-<div class="row"><b>Um dia inteiro de imersão presencial</b><span>R$ 890</span></div>
+<div class="row"><b>Um dia inteiro de imersão presencial</b><span>R$ 547</span></div>
 <div class="row"><b>Bag Experience com as marcas parceiras</b><span>R$ 240</span></div>
 <div class="row"><b>Certificado de participação</b><span>incluso</span></div>
 <div class="row"><b>Área de ativações das marcas parceiras</b><span>R$ 120</span></div>
-<div class="row"><b>Acesso à rede de 10 referências nacionais</b><span>sem preço</span></div>
-<div class="sum"><b>Valor somado das partes</b><span>R$ 1.250</span></div>
+<div class="row"><b>Acesso à rede de 8 referências nacionais</b><span>sem preço</span></div>
+<div class="sum"><b>Valor somado das partes</b><span>R$ 907</span></div>
 </div>
 <div class="buy">
 <div class="price"><b>12x de</b><em data-parcela>R$ 40,98</em></div>
@@ -439,7 +444,7 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 <img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_1400/v1775584357/NB_Balneario_-_Bag_Experience_3_jnjydq.jpg" alt="">
 <div class="final-veil"></div>
 <div class="wrap pad final-in">
-<h2 class="h2b">O Centro-Oeste entrou no calendário. <span class="serif">Entre com ele.</span></h2>
+<h2 class="h2b">O Norte entrou no calendário. <span class="serif">Entre com ele.</span></h2>
 <p><span data-preco-vista>R$ 397</span> no último lote, em até 12x..</p>
 <div class="ctas" style="max-width:520px">
 <a class="btn btn-p" data-checkout href="#oferta">Garantir minha vaga →</a>
@@ -449,19 +454,30 @@ footer{background:var(--deep);border-top:1px solid var(--line)}
 </section>
 </main>
 
-<footer>
-<div class="wrap pad foot">
-<img loading="lazy" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1782001627/Logo_NB_-_header_footer_kjwhyr.svg" alt="Nutrição Brasil" width="120" height="22">
-<nav>
-<a href="/">Home</a>
-<a href="/cidades">Cidades</a>
-<a href="/termos">Termos</a>
-<a href="/privacidade">Privacidade</a>
-<a target="_blank" rel="noopener" href="https://wa.me/5561998318817">WhatsApp</a>
-<a target="_blank" rel="noopener" href="https://instagram.com/nutricaobrasiloficial">Instagram</a>
-</nav>
-<p>Nutrição Brasil Belém · 19 de setembro de 2026 · Hotel Sagres, Belém/PA<br>Realização Science Play Cursos Ltda · CNPJ 33.612.911/0001-29 · © 2026 Nutrição Brasil.</p>
-</div>
+<footer style="background:#0d0618;border-top:1px solid #3a2a52;padding:56px 24px 40px;text-align:center">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:24px">
+      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1782001627/Logo_NB_-_header_footer_kjwhyr.svg" alt="Nutrição Brasil" style="height:28px">
+      <span style="width:1px;height:22px;background:#3a2a52"></span>
+      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/dlzrfhwin/image/upload/v1776336705/Logo_SP_negativa_izuzur.png" alt="Science Play" style="height:26px;opacity:.85">
+    </div>
+    <nav style="display:flex;justify-content:center;gap:12px 26px;flex-wrap:wrap;margin-bottom:24px">
+      <a href="/ingressos" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx31">Ingressos</a>
+      <a href="/corrida" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx32">NB Run</a>
+      <a href="/expo" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx33">Expo</a>
+      <a href="/visitante" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx34">Visitante</a>
+      <a href="/programacao" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx35">Programação</a>
+      <a href="/expositores" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx36">Seja expositor</a>
+      <a href="/noticias" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx37">Notícias</a>
+      <a href="/hall-da-fama" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx38">Hall da Fama</a>
+      <a href="/golden" style="color:#8a7aa5;font-size:13px;font-weight:600" class="sx39">Golden</a>
+    </nav>
+    <div style="display:flex;justify-content:center;gap:18px;margin-bottom:22px">
+      <a href="https://www.instagram.com/nutricaobrasiloficial" target="_blank" rel="noopener" style="color:#c9bcde;font-size:13px;font-weight:600" class="sx40">@nutricaobrasiloficial</a>
+      <a href="https://wa.me/5561998318817" target="_blank" rel="noopener" style="color:#c9bcde;font-size:13px;font-weight:600" class="sx41">WhatsApp</a>
+    </div>
+    <p style="margin:0;color:#8a7aa5;font-size:12px;line-height:1.8;opacity:.7">Nutrição Brasil 2026 · Brasília · Belém · Goiânia · Porto Alegre<br>Realização Science Play Cursos Ltda · CNPJ 33.612.911/0001-29<br>© 2026 Nutrição Brasil. Todos os direitos reservados.</p>
+  </div>
 </footer>
 
 <div class="sheet-bd" data-sheet-bd hidden>
@@ -626,20 +642,7 @@ $$("[data-persona]").forEach(function(b){
 });
 pintaPersona("clinica");
 
-/* agenda 09h → 19h */
-(function(){
-  var el=$("[data-agenda]"); if(!el)return;
-  var html="";
-  for(var h=9;h<=19;h++){
-    var on=h===9;
-    html+='<article class="slot'+(on?" on":"")+'">'
-      +'<b>'+String(h).padStart(2,"0")+'h00</b>'
-      +'<h3>'+(on?"Abertura do evento":"A definir")+'</h3>'
-      +'<p>'+(on?"Boas-vindas e abertura oficial. Conteúdo a definir.":"Conteúdo, palestrante e formato a definir.")+'</p>'
-      +'</article>';
-  }
-  el.innerHTML=html;
-})();
+/* agenda */ (function(){ var el=$("[data-agenda]"); if(el)el.innerHTML="<article class=\"slot on\" style=\"border-color:#e0b3a1\"><b>09h00 &ndash; 09h40</b><span style=\"display:inline-block;background:#e0b3a1;color:#1A0F2E;font:800 9px/1 Arial;letter-spacing:1px;text-transform:uppercase;padding:4px 7px;border-radius:4px;margin-bottom:6px\">Bag Experience</span><h3>Credenciamento e Bag Experience</h3><p>Retirada do kit das marcas parceiras e boas-vindas.</p></article><article class=\"slot on\" style=\"\"><b>09h40 &ndash; 10h20</b><h3>Abertura oficial</h3><p>Abertura do dia com Brunno Falcão.</p></article><article class=\"slot\" style=\"\"><b>10h20 &ndash; 11h00</b><h3>Conteúdo</h3><p>Palestrante e tema a definir.</p></article><article class=\"slot\" style=\"opacity:.72\"><b>11h00 &ndash; 11h40</b><h3>Coffee break</h3><p>Intervalo de 40min na área das marcas.</p></article><article class=\"slot\" style=\"\"><b>11h40 &ndash; 12h20</b><h3>Conteúdo</h3><p>Palestrante e tema a definir.</p></article><article class=\"slot\" style=\"\"><b>12h20 &ndash; 13h00</b><h3>Conteúdo</h3><p>Palestrante e tema a definir.</p></article><article class=\"slot\" style=\"opacity:.72\"><b>13h00 &ndash; 14h40</b><h3>Almoço</h3><p>Intervalo de 100min.</p></article><article class=\"slot\" style=\"\"><b>14h40 &ndash; 15h20</b><h3>Conteúdo</h3><p>Palestrante e tema a definir.</p></article><article class=\"slot\" style=\"\"><b>15h20 &ndash; 16h00</b><h3>Conteúdo</h3><p>Palestrante e tema a definir.</p></article><article class=\"slot\" style=\"\"><b>16h00 &ndash; 16h40</b><h3>Conteúdo</h3><p>Palestrante e tema a definir.</p></article><article class=\"slot\" style=\"opacity:.72\"><b>16h40 &ndash; 17h20</b><h3>Coffee break</h3><p>Intervalo de 40min na área das marcas.</p></article><article class=\"slot\" style=\"\"><b>17h20 &ndash; 18h00</b><h3>Conteúdo</h3><p>Palestrante e tema a definir.</p></article><article class=\"slot\" style=\"\"><b>18h00 &ndash; 18h40</b><h3>Encerramento</h3><p>Fechamento do dia e foto oficial.</p></article>"; })();
 
 /* palestrantes + bottom sheet */
 var SPEAKERS=[
