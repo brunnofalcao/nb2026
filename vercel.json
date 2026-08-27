@@ -50,6 +50,11 @@
       "source": "/release2026",
       "destination": "/assets/release-oficial-nb2026.pdf",
       "permanent": false
+    },
+    {
+      "source": "/goiania-vip",
+      "destination": "/goiania",
+      "permanent": false
     }
   ]
 }
