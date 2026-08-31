@@ -1,5 +1,29 @@
 User-agent: *
 Allow: /
 
+# Edição encerrada, mantida como registro
+Disallow: /brasilia-2026
+Disallow: /ingressos
+Disallow: /corrida
+Disallow: /visitante
+Disallow: /expo
+Disallow: /programacao
+Disallow: /convidadoblack43t62
+Disallow: /imprensav34b3
+Disallow: /goiania-vip
+Disallow: /golden
+
+# Agentes de IA: leitura liberada
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.nutricaobrasil.com.br/sitemap.xml
 Sitemap: https://www.nutricaobrasil.com.br/sitemap-news.xml
